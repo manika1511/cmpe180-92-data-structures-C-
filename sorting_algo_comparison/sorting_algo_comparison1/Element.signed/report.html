@@ -1,0 +1,2129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Version" content="0.3"/>
+<meta name="Submission" content="/tmp/codecheck/1704272144762319102500956772"/>
+<meta name="Problem" content="17042209328gvpt775wt3k6uk3frrjfz0bk"/>
+<meta name="Level" content="1"/>
+<meta name="Time" content="2017-04-27T21:44:31Z"/>
+<meta name="ID" content="Element"/>
+<meta name="User" content="17013023099qa49dadx2wzt6v1o7br1ilom"/>
+<meta name="Elapsed" content="28034 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Testing SortTests.cpp</p>
+<pre class="output">
+===============
+Unsorted random
+===============
+
+N = 10
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort          15          15          12          45           0
+           Insertion sort           9           9          17          26           0
+     Shellsort suboptimal          22          22           9          25           0
+        Shellsort optimal           9           9          17          10           0
+     Quicksort suboptimal          20          20          28          27           0
+        Quicksort optimal          19          19          28          36           0
+                Mergesort           0           0          21          21           0
+
+N = 100
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort         195         195         192       4,950           0
+           Insertion sort          99          99       2,503       2,602           0
+     Shellsort suboptimal         503         503         347         509           0
+        Shellsort optimal         282         282         475         285           0
+     Quicksort suboptimal         483         483         828         712           0
+        Quicksort optimal         463         463         802         774           0
+                Mergesort           0           0         547         547           0
+
+N = 1,000
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort       1,993       1,993       1,988     499,500           3
+           Insertion sort         999         999     250,116     251,115           3
+     Shellsort suboptimal       8,006       8,006       7,197       8,015           0
+        Shellsort optimal       4,821       4,821       9,429       4,826           0
+     Quicksort suboptimal       6,106       6,106      10,858      11,183           0
+        Quicksort optimal       5,656       5,656      10,060      11,447           0
+                Mergesort           0           0       8,733       8,733           0
+
+N = 10,000
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort      19,988      19,988      19,978  49,995,000         303
+           Insertion sort       9,999       9,999  24,873,843  24,883,842         371
+     Shellsort suboptimal     120,005     120,005     147,183     120,018           6
+        Shellsort optimal      75,084      75,084     169,472      75,092           5
+     Quicksort suboptimal      88,561      88,561     163,642     155,510           4
+        Quicksort optimal      81,315      81,315     150,172     153,762           4
+                Mergesort           0           0     120,593     120,593           6
+
+==============
+Already sorted
+==============
+
+N = 10
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort           9           9           0          45           0
+           Insertion sort           9           9           0           9           0
+     Shellsort suboptimal          22          22           0          25           0
+        Shellsort optimal           9           9           0          10           0
+     Quicksort suboptimal          18          18          18          54           0
+        Quicksort optimal          22          22          32          40           0
+                Mergesort           0           0          25          25           0
+
+N = 100
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort          99          99           0       4,950           0
+           Insertion sort          99          99           0          99           0
+     Shellsort suboptimal         503         503           0         509           0
+        Shellsort optimal         282         282           0         285           0
+     Quicksort suboptimal         198         198         198       5,049           0
+        Quicksort optimal         381         381         636         705           0
+                Mergesort           0           0         573         573           0
+
+N = 1,000
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort         999         999           0     499,500           2
+           Insertion sort         999         999           0         999           0
+     Shellsort suboptimal       8,006       8,006           0       8,015           0
+        Shellsort optimal       4,821       4,821           0       4,826           0
+     Quicksort suboptimal       1,998       1,998       1,998     500,499           4
+        Quicksort optimal       5,448       5,448       9,874      10,008           0
+                Mergesort           0           0       8,977       8,977           0
+
+N = 10,000
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort       9,999       9,999           0  49,995,000         305
+           Insertion sort       9,999       9,999           0       9,999           0
+     Shellsort suboptimal     120,005     120,005           0     120,018           7
+        Shellsort optimal      75,084      75,084           0      75,092           1
+     Quicksort suboptimal      19,998      19,998      19,998  50,004,999         459
+        Quicksort optimal      70,516      70,516     129,224     135,438           3
+                Mergesort           0           0     123,617     123,617           5
+
+==============
+Reverse sorted
+==============
+
+N = 10
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort          14          14          10          45           0
+           Insertion sort           9           9          45          54           0
+     Shellsort suboptimal          22          22          13          25           0
+        Shellsort optimal           9           9          45          10           0
+     Quicksort suboptimal          43          43          68          54           0
+        Quicksort optimal          21          21          32          36           0
+                Mergesort           0           0          25          25           0
+
+N = 100
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort         149         149         100       4,950           0
+           Insertion sort          99          99       4,950       5,049           0
+     Shellsort suboptimal         503         503         260         509           0
+        Shellsort optimal         282         282         474         285           0
+     Quicksort suboptimal       2,698       2,698       5,198       5,049           0
+        Quicksort optimal         776         776       1,450       1,479           0
+                Mergesort           0           0         573         573           0
+
+N = 1,000
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort       1,499       1,499       1,000     499,500           4
+           Insertion sort         999         999     499,500     500,499           7
+     Shellsort suboptimal       8,006       8,006       4,700       8,015           0
+        Shellsort optimal       4,821       4,821       5,990       4,826           0
+     Quicksort suboptimal     251,998     251,998     501,998     500,499          10
+        Quicksort optimal      64,002      64,002     127,002     127,255           2
+                Mergesort           0           0       8,977       8,977           0
+
+N = 10,000
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort      14,999      14,999      10,000  49,995,000         460
+           Insertion sort       9,999       9,999  49,995,000  50,004,999         757
+     Shellsort suboptimal     120,005     120,005      62,560     120,018           3
+        Shellsort optimal      75,084      75,084      55,972      75,092           2
+     Quicksort suboptimal  25,019,998  25,019,998  50,019,998  50,004,999       1,101
+        Quicksort optimal   6,265,002   6,265,002  12,520,002  12,522,505         267
+                Mergesort           0           0     123,617     123,617           5
+
+==========
+All zeroes
+==========
+
+N = 10
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort           9           9           0          45           0
+           Insertion sort           9           9           0           9           0
+     Shellsort suboptimal          22          22           0          25           0
+        Shellsort optimal           9           9           0          10           0
+     Quicksort suboptimal          18          18          18          54           0
+        Quicksort optimal          18          18          18          72           0
+                Mergesort           0           0          19          19           0
+
+N = 100
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort          99          99           0       4,950           0
+           Insertion sort          99          99           0          99           0
+     Shellsort suboptimal         503         503           0         509           0
+        Shellsort optimal         282         282           0         285           0
+     Quicksort suboptimal         198         198         198       5,049           0
+        Quicksort optimal         198         198         198       5,247           0
+                Mergesort           0           0         356         356           0
+
+N = 1,000
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort         999         999           0     499,500           3
+           Insertion sort         999         999           0         999           0
+     Shellsort suboptimal       8,006       8,006           0       8,015           0
+        Shellsort optimal       4,821       4,821           0       4,826           0
+     Quicksort suboptimal       1,998       1,998       1,998     500,499           4
+        Quicksort optimal       1,998       1,998       1,998     502,497           4
+                Mergesort           0           0       5,044       5,044           0
+
+N = 10,000
+
+                ALGORITHM      COPIES   DESTRUCTS       MOVES    COMPARES   MILLISECS
+           Selection sort       9,999       9,999           0  49,995,000         315
+           Insertion sort       9,999       9,999           0       9,999           0
+     Shellsort suboptimal     120,005     120,005           0     120,018           2
+        Shellsort optimal      75,084      75,084           0      75,092           1
+     Quicksort suboptimal      19,998      19,998      19,998  50,004,999         474
+        Quicksort optimal      19,998      19,998      19,998  50,024,997         464
+                Mergesort           0           0      69,008      69,008           4
+
+Done! 5 seconds.
+</pre>
+<p class="header studentFiles">Student files</p>
+<p class="caption">Element.cpp:</p>
+<pre>/*
+ *Assignment #12: Sorting Algorithms
+ *Author        : Manika Kapoor
+ *Student ID    : 011539203
+*/
+#include &lt;iostream&gt;
+#include "Element.h"
+
+using namespace std;
+
+long Element::copy_count = 0;          //static variable to store copy constructor calls
+long Element::destructor_count = 0;    //static variable to store copy constructor calls 
+
+/**
+ * Default constructor.
+ */
+Element::Element() : value(0) {}
+
+/**
+ * Constructor.
+ * @param val the element's value.
+ */
+Element::Element(long val) : value(val) {}
+
+/**
+ * Copy constructor.
+ * @param other the other element to be copied.
+ */
+Element::Element(const Element&amp; other)
+{
+   value = other.value;
+   copy_count++;
+}
+
+/**
+ * Destructor.
+ */
+Element::~Element()
+{
+   destructor_count++;
+}
+
+//Accessor function returns copy_count
+long Element:: get_copy_count()
+{
+   return copy_count;
+}
+
+//Accessor function returns destructor_count
+long Element:: get_destructor_count()
+{
+   return destructor_count;
+}
+
+/*
+*Function to reset the static variables.
+*Sets constructor_count, copy_count, destructor_count to zero
+*/
+void Element:: reset()
+{
+   copy_count = 0;
+   destructor_count = 0;
+}
+
+/**
+ * Getter.
+ * @return the value.
+ */
+long Element::get_value() const { return value; }
+
+/*
+ *Overloaded = operator to compare two nodes
+ */
+void Element:: operator = (const Element &amp;E)
+{
+   value = E.value;
+}
+
+/*
+ *Overloaded &gt; operator to compare two nodes
+ *Returns true if value to be inserted is greater than or equal to the value in Node
+ */
+bool Element:: operator &gt;(const Element&amp; other) const
+{
+   if (value &gt; other.value)
+   {
+      return true;
+   }
+   else
+   {
+      return false;
+   }
+}
+
+/*
+ *Overloaded &lt; operator to compare two nodes
+ *Returns true if value to be inserted is greater than or equal to the value in Node
+ */
+bool Element:: operator &lt;(const Element&amp; other) const
+{
+   if (value &lt; other.value)
+   {
+      return true;
+   }
+   else
+   {
+      return false;
+   }
+}
+
+/*
+ *Overloaded &lt;&lt; operator to compare two nodes
+ *Returns true if value to be inserted is greater than or equal to the value in Node
+ */
+ostream&amp; operator&lt;&lt;(ostream&amp; outs, const Element&amp; E)
+{
+   outs &lt;&lt; E.value;
+   return outs;
+}
+</pre>
+<p class="caption">Element.h:</p>
+<pre>#ifndef DATA_H_
+#define DATA_H_
+
+#include &lt;iostream&gt;
+using namespace std;
+
+/**
+ * The class for the data elements that will be sorted.
+ */
+class Element
+{
+public:
+   Element();                      //default constructor
+   Element(long val);              //constructor   
+   Element(const Element&amp; other);  //copy constructor
+   virtual ~Element();             //default destructor
+   
+   long get_value() const;         //getter function to get value
+   
+   void operator = (const Element &amp;E );         //overloaded = operator
+   bool operator &gt;(const Element&amp; other) const; //overloaded &gt; operator 
+   bool operator &lt;(const Element&amp; other) const; //overloaded &lt; operator
+   friend ostream&amp; operator&lt;&lt;(ostream&amp; outs, const Element&amp; E); //overloaded &lt;&lt; operator
+   
+   // Access and reset the values of the static member variables.
+   static long get_copy_count();
+   static long get_destructor_count();
+   static void reset();
+   
+private:
+   long value;
+   // Static member variables, which are global to the class.
+   // These variables exist independently from any Node objects.
+   static long copy_count;
+   static long destructor_count;
+};
+
+#endif /* DATA_H_ */
+</pre>
+<p class="caption">InsertionSort.cpp:</p>
+<pre>#include "InsertionSort.h"
+
+/**
+ * Constructor.
+ * @param name the name of the algorithm.
+ */
+InsertionSort::InsertionSort(string name) : VectorSorter(name) {}
+
+/**
+ * Destructor.
+ */
+InsertionSort::~InsertionSort() {}
+
+/**
+ * Run the insertion sort algorithm.
+ * @throws an exception if an error occurred.
+ */
+//***Citation*** : http://cforbeginners.com/insertionsort.html
+void InsertionSort::run_sort_algorithm() throw (string)
+{
+   int check, index; 
+   for(check = 1; check &lt; size; check++)
+   {
+      Element temp = data[check];    //storing element to be checked   
+      index = check-1;               //index of previous element
+      compare_count++;
+      while((temp &lt; data[index]) &amp;&amp; (index &gt;= 0)) //comapring with all the elements
+      {
+         compare_count++;
+         data[index+1] = data[index];    //moves element forward
+         move_count++;
+         index--;
+      }
+      data[index+1] = temp;              //insert element in proper place
+   }
+}
+</pre>
+<p class="caption">LinkedList.cpp:</p>
+<pre>#include &lt;iostream&gt;
+#include "LinkedList.h"
+#include "Sorter.h"
+using namespace std;
+
+/**
+ * Default constructor.
+ */
+LinkedList::LinkedList() : head(nullptr), tail(nullptr), size(0) {};
+
+/**
+ * Constructor: Create a new list from an existing one.
+ * Both lists will share the nodes.
+ * @param head the head of the existing list.
+ * @param tail the tail of the existing list.
+ * @param size the size of the existing list.
+ */
+LinkedList::LinkedList(Node *head, Node *tail, const int size)
+{
+   this-&gt;head = head;
+   this-&gt;tail = tail;
+   this-&gt;tail-&gt;next = nullptr;
+   this-&gt;size = size;
+}
+
+/**
+ * Destructor.
+ */
+LinkedList::~LinkedList() {}
+
+/**
+ * Get the head of the list.
+ * @return the head.
+ */
+Node *LinkedList::get_head() const { return head; }
+
+/**
+ * Get the tail of the list.
+ * @return the tail.
+ */
+Node *LinkedList::get_tail() const { return tail; }
+
+/**
+ * Get the size of the list.
+ * @return the size.
+ */
+int LinkedList::get_size() const { return size; }
+
+/**
+ * Set the head, tail, and size of the linked list.
+ * @param head the head of the linked list.
+ * @param tail the tail of the linked list.
+ * @param size the size of the linked list.
+ */
+void LinkedList::set(Node *head, Node *tail, int size)
+{
+   this-&gt;head = head;
+   this-&gt;tail = tail;
+   this-&gt;tail-&gt;next = nullptr;
+   this-&gt;size = size;
+}
+
+/**
+ * Remove the head of the list and return the removed node.
+ * @return the removed node.
+ */
+Node *LinkedList::remove_head()
+{
+   if (head == nullptr) return nullptr;
+   
+   Node *removed_head = head;
+   head = head-&gt;next;
+   
+   // Is the list now empty?
+   if (head == nullptr) tail = nullptr;
+   
+   size--;
+   return removed_head;
+}
+
+/**
+ * Add a node to the tail of the list.
+ * @param value the value of the node to add.
+ */
+void LinkedList::add(const Element&amp; elmt)
+{
+   Node *node = new Node(elmt);
+   add(node);
+}
+
+/**
+ * Add a node to the tail of the list.
+ * @param node the node to add.
+ */
+void LinkedList::add(Node *node)
+{
+   // First node.
+   if (head == nullptr)
+   {
+      head = tail = node;
+   }
+   
+   // Subsequent node.
+   else
+   {
+      tail-&gt;next = node;
+      tail = node;
+   }
+   node-&gt;next = nullptr;
+   size++;
+}
+
+/**
+ * Delete all the nodes of the list.
+ */
+void LinkedList::clear()
+{
+   // Repeatedly delete the head node until the list is empty
+   while (head != nullptr)
+   {
+      Node *next = head-&gt;next;
+      delete head;
+      head = next;
+   }
+   tail = nullptr;
+   size = 0;
+}
+
+/**
+ * Reset the head, tail, and size of the list.
+ */
+void LinkedList::reset()
+{
+   head = tail = nullptr;
+   size = 0;
+}
+
+/**
+ * Print the values of the list's nodes.
+ */
+void LinkedList::print() const
+{
+   for (Node *ptr = head; ptr != nullptr; ptr = ptr-&gt;next)
+   {
+      cout &lt;&lt; " " &lt;&lt; ptr-&gt;element.get_value();
+   }
+   cout &lt;&lt; endl;
+}
+
+/**
+ * Split this list into two sublists.
+ * @param list1 the first sublist.
+ * @param list2 the second sublist.
+ */
+void LinkedList::split(LinkedList&amp; list1, LinkedList&amp; list2)
+{
+   int list_size = size;           //store size of the list to split
+   for(int i = 0; i &lt; list_size; i++)
+   {
+      if(i % 2 == 0)                  //add even position elements in list1
+      {
+         list1.add(this-&gt;remove_head());
+      }
+      else                            //add odd position elements in list2
+      {
+         list2.add(this-&gt;remove_head());
+      }
+   }
+}
+
+/**
+ * Add another list to the end of this list.
+ * @param other_list the other list.
+ */
+void LinkedList::concatenate(LinkedList&amp; other_list)
+{
+   tail-&gt;next = other_list.head;
+   this-&gt;set(head,other_list.tail,size+other_list.size);
+}
+</pre>
+<p class="caption">MergeSort.cpp:</p>
+<pre>#include &lt;string&gt;
+#include "MergeSort.h"
+#include "Sorter.h"
+#include "LinkedList.h"
+
+/**
+ * Constructor.
+ * @param name the name of the algorithm.
+ */
+MergeSort::MergeSort(string name) : ListSorter(name) {}
+
+/**
+ * Destructor.
+ */
+MergeSort::~MergeSort() {}
+
+/**
+ * Run the mergesort algorithm.
+ * @throws an exception if an error occurred.
+ */
+void MergeSort::run_sort_algorithm()
+    throw (string)
+{
+   // Defensive programming: Make sure we end up
+   // with the same size list after sorting.
+   int size_before = data.get_size();
+   
+   mergesort(data);
+   
+   // Check sizes.
+   int size_after = data.get_size();
+   if (size_before != size_after)
+   {
+      string message = "***** Size mismatch: before " + to_string(size_before) + ", size after " +
+                         to_string(size_after);
+      throw message;
+   }
+}
+
+/**
+ * The mergesort algorithm recursively splits and merges data lists.
+ * @param list the list of data to sort.
+ */
+//***Citation: Data Structures using C++ by D.S. Malik
+void MergeSort::mergesort(LinkedList&amp; list)
+{
+   LinkedList sublist1, sublist2;   //lists to store the two sublists
+   
+   if (list.get_head() != nullptr)
+   {
+      if (list.get_head()-&gt;next != nullptr)
+      {
+         list.split(sublist1, sublist2);         //split if the list contains more than one element
+      
+         if(sublist1.get_head() != nullptr)
+         {
+            mergesort(sublist1);               //merge sort on first sublist
+         }
+         if(sublist2.get_head() != nullptr)
+         {
+            mergesort(sublist2);              //merger sort on second sublist
+         }
+         merge(list,sublist1,sublist2);       //merge the sublists
+      }
+   }
+}
+
+/**
+ * Merge two sublists back into a single list.
+ * @param list the merged list.
+ * @param sublist1 the first sublist.
+ * @param sublist2 the second sublist.
+ */
+//***Citation: Data Structures using C++ by D.S. Malik 
+void MergeSort::merge(LinkedList&amp; list, LinkedList&amp; sublist1, LinkedList&amp; sublist2)
+{
+   list.reset();     
+   /*
+    *iterate through both the sublists if they are not empty and compare their head values.
+    *Remove the head of the sublist having smaller value and add it to the list
+   */
+   while(sublist1.get_head() != nullptr &amp;&amp; sublist2.get_head() != nullptr)   
+   {
+      if(sublist1.get_head()-&gt;element.get_value()&lt;=sublist2.get_head()-&gt;element.get_value())
+      {
+         compare_count++;
+         move_count++;
+         list.add(sublist1.remove_head());
+      }
+      else
+      {
+         compare_count++;
+         move_count++;
+         list.add(sublist2.remove_head());
+      }
+   }
+   //Concatenate the left over part of the sublist having elements to the list
+   if (sublist1.get_head() == nullptr &amp;&amp; sublist2.get_head() != nullptr)
+   {
+      list.concatenate(sublist2);
+   }
+   else if (sublist2.get_head() == nullptr &amp;&amp; sublist1.get_head() != nullptr)
+   {
+      list.concatenate(sublist1);
+   }
+}
+
+/**
+ * Clear the data.
+ */
+void MergeSort::clear() { data.clear(); }
+</pre>
+<p class="caption">Node.cpp:</p>
+<pre>#include "Node.h"
+#include "Element.h"
+
+//Constructor sets value to the_value and increases constructor_count by 1
+Node:: Node(const Element the_value)
+{
+   element = the_value;
+   next = nullptr;
+}
+
+//Copy Constructor 
+Node:: Node(const Node&amp; other)
+{
+   element = other.element;
+   next = nullptr;
+}
+
+//Destructor increments destructor_count by 1
+Node:: ~Node()
+{
+
+}
+
+//Accessor function returns value
+Element Node:: get_value() const
+{
+   return element;
+}
+</pre>
+<p class="caption">Node.h:</p>
+<pre>#ifndef NODE_H_
+#define NODE_H_
+
+#include "Element.h"
+
+/**
+ * A node of the linked list for mergesort.
+ */
+class Node
+{
+public:
+   Node(const Element the_value); //Constructor
+   Node(const Node&amp; other);       //Copy Constructor
+   virtual ~Node();               //destructor
+   Element get_value() const;     //accessor function to access the value in node
+   Node* next;                    //pointer pointing to the next Node of the list
+   Element element;               //variable which is a part of Node
+};
+
+#endif /* NODE_H_ */
+</pre>
+<p class="caption">QuickSortOptimal.cpp:</p>
+<pre>#include "QuickSortOptimal.h"
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+/**
+ * Constructor.
+ * @param name the name of this algorithm.
+ */
+QuickSortOptimal::QuickSortOptimal(string name) : QuickSorter(name) {}
+
+/**
+ * Destructor.
+ */
+QuickSortOptimal::~QuickSortOptimal() {}
+
+/**
+ * Choose a good pivot, the median-of-three:
+ * The middle value of the leftmost, rightmost, and center elements.
+ * This is a compromise since the most optimal pivot would be the
+ * median of the subrange, but that's too expensive to compute.
+ * @param left the left index of the subrange to sort.
+ * @param right the right index of the subrange to sort.
+ * @return the chosen pivot value.
+ */
+Element&amp; QuickSortOptimal::choose_pivot_strategy(const int left, const int right)
+{
+   if (data.size() &gt; 2)
+   {
+      long l = data[left].get_value();           //variable to store the leftmost Element
+      long m = data[(left+right)/2].get_value(); //variable to store the middle Element 
+      long r = data[right].get_value();          //variable to store the rightmost Element
+      compare_count++;
+      compare_count++;
+      
+      //Pivot is the middle of the above three values
+      if ((l &lt;= m &amp;&amp; l &gt;= r) || (l &gt;= m &amp;&amp; l &lt;= r))
+      {
+         return data[left];
+      }
+      else if ((m &lt;= l &amp;&amp; m &gt;= r) || (m &gt;= l &amp;&amp; m &lt;= r))
+      {
+         return data[(left+right)/2];
+      }
+      else if ((r &lt;= l &amp;&amp; r &gt;= m) || (r &gt;= l &amp;&amp; r &lt;= m))
+      {
+         return data[right];
+      }
+   }
+   else
+   {
+      return data[left];
+   }
+}
+</pre>
+<p class="caption">QuickSortSuboptimal.cpp:</p>
+<pre>#include "QuickSortSuboptimal.h"
+
+/**
+ * Constructor.
+ * @param name the name of this algorithm.
+ */
+QuickSortSuboptimal::QuickSortSuboptimal(string name) : QuickSorter(name) {}
+
+/**
+ * Destructor.
+ */
+QuickSortSuboptimal::~QuickSortSuboptimal() {}
+
+/**
+ * Choose a bad pivot, always the leftmost element of the subrange.
+ * @param left the left index of the subrange to sort.
+ * @param right the right index of the subrange to sort.
+ * @return the chosen pivot value.
+ */
+Element&amp; QuickSortSuboptimal::choose_pivot_strategy(const int left, const int right)
+{
+   return data[left];
+}
+</pre>
+<p class="caption">QuickSorter.cpp:</p>
+<pre>#include &lt;iostream&gt;
+#include "QuickSorter.h"
+#include "VectorSorter.h"
+using namespace std;
+
+/**
+ * Constructor.
+ * @param name the name of this algorithm.
+ */
+QuickSorter::QuickSorter(string name) : VectorSorter(name) {}
+
+/**
+ * Destructor.
+ */
+QuickSorter::~QuickSorter() {}
+
+/**
+ * Run the quicksort algorithm.
+ * @throws an exception if an error occurred.
+ */
+void QuickSorter::run_sort_algorithm() throw (string)
+{
+   quicksort(0, size-1);
+}
+
+/**
+ * The quicksort algorithm recursively sorts data subranges.
+ * @param left the left index of the subrange to sort.
+ * @param right the right index of the subrange to sort.
+ */
+void QuickSorter::quicksort(const int left, const int right)
+{
+   int pivotLoc;
+   if (left &lt; right)
+   {
+      Element pivot = choose_pivot(left, right);
+      pivotLoc = partition(left, right, pivot);
+      quicksort (left, pivotLoc-1);
+      quicksort (pivotLoc+1, right);
+   }
+}
+
+/**
+ * Choose the pivot according to a pivot strategy.
+ * The chosen pivot will be moved temporarily to the right end.
+ * @param left the left index of the partition to sort.
+ * @param right the right index of the partition to sort.
+ * @return the pivot value.
+ */
+Element&amp; QuickSorter::choose_pivot(const int left, const int right)
+{
+   return choose_pivot_strategy(left, right);
+}
+
+/**
+ * Partition the subrange by moving data elements &lt; pivot to the left
+ * and data elements &gt; pivot to the right.
+ * @param left the left index of the partition to sort.
+ * @param right the right index of the partition to sort.
+ * @param pivot the pivot value.
+ */
+//***Citation: Data structures using C++ by D.S. Malik
+int QuickSorter::partition(const int left, const int right, const Element&amp; pivot)
+{
+   int index, small;
+   compare_count++;
+   
+   /*
+    *swap the pivot with the leftmost element. As in suboptimal case the pivot itself is 
+    *the leftmost element so no swapping.
+   */
+   if (data[left].get_value() != pivot.get_value() &amp;&amp; left &gt; -1 &amp;&amp; left &lt; data.size())
+   {
+      compare_count++;
+      if (data[right].get_value() != pivot.get_value())
+      {
+         swap(left, (left+right)/2);
+      }
+      else
+      {
+         swap(left, right);
+      }
+   }
+   
+   small = left;
+   
+   //iterate through the vector starting from 2nd element as first element is now pivot
+   for(index = left+1; index &lt;= right &amp;&amp; small &lt; data.size(); index++)
+   {
+      compare_count++;
+      if (data[index] &lt; pivot)    //comparing the pivot with element at index 
+      {
+         small++;
+         swap(small, index);      //swap only if the element is less than the pivot
+      }
+   }
+   
+   //small has the sorted position of the pivot
+   swap(left, small);             //swap the pivot with the element at index small 
+   return small;
+}
+</pre>
+<p class="caption">ShellSortOptimal.cpp:</p>
+<pre>#include "ShellSortOptimal.h"
+#include "VectorSorter.h"
+#include "Sorter.h"
+
+/**
+ * Constructor.
+ * @param name the name of this algorithm.
+ */
+ShellSortOptimal::ShellSortOptimal(string name) :VectorSorter(name) {}
+
+/**
+ * Destructor.
+ */
+ShellSortOptimal::~ShellSortOptimal() {}
+
+/**
+ * Run the optimal shellsort algorithm.
+ * According to Don Knuth:
+ * h = 3*i + 1 for i = 0, 1, 2, ... used in reverse.
+ * @throws an exception if an error occurred.
+ */
+ //***Citation: Data Structures using C++ by D.S. Malik
+void ShellSortOptimal::run_sort_algorithm() throw (string)
+{
+   int inc;
+   //finding the biggest increment to start using Don Kuth's algorithm
+   for (inc = 1; inc &lt; (size-1)/9; inc = 3*inc+1);
+   
+   int increment;
+   for (increment = inc; increment &gt; 0; increment = increment/3)
+   {
+      compare_count++;
+      
+      for (int i = increment; i &lt; size; i++)
+      {
+         Element temp = data[i];
+         int j = i;
+         compare_count++;
+         
+         //compare the element at start and start-increment position and swap if it is smaller
+         while(j &gt;= increment &amp;&amp; data[j - increment] &gt; temp) 
+         {
+            data[j] = data[j - increment];
+            move_count++;
+            j = j - increment;
+         }
+         data[j] = temp;    
+      }
+   }
+}
+</pre>
+<p class="caption">ShellSortSuboptimal.cpp:</p>
+<pre>#include "ShellSortSuboptimal.h"
+
+/**
+ * Constructor.
+ * @param name the name of this algorithm.
+ */
+ShellSortSuboptimal::ShellSortSuboptimal(string name) : VectorSorter(name) {}
+
+/**
+ * Destructor.
+ */
+ShellSortSuboptimal::~ShellSortSuboptimal() {}
+
+/**
+ * Run the suboptimal shellsort algorithm.
+ * @throws an exception if an error occurred.
+ */
+//***Citation: http://quiz.geeksforgeeks.org/shellsort/
+void ShellSortSuboptimal::run_sort_algorithm() throw (string)
+{
+   int increment;
+   
+   //first increment starts from half the size of vector
+   for (increment = size/2; increment &gt; 0; increment = increment/2)
+   {
+      compare_count++;
+      for (int i = increment; i &lt; size; i++)
+      {
+         Element temp = data[i];
+         int j = i;
+         compare_count++;
+         
+         //compare the element at start and start-increment position and swap if it is smaller
+         while(j &gt;= increment &amp;&amp; data[j - increment] &gt; temp)
+         {
+            data[j] = data[j - increment];
+            move_count++;
+            j = j - increment;
+         }
+         data[j] = temp; 
+      }
+   }
+}
+</pre>
+<p class="header providedFiles">Provided files</p>
+<p class="caption">DataAllZeroes.cpp:</p>
+<pre>#include "DataAllZeros.h"
+
+/**
+ * Default constructor.
+ */
+DataAllZeros::DataAllZeros() : DataGenerator("All zeroes") {}
+
+/**
+ * Destructor.
+ */
+DataAllZeros::~DataAllZeros() {}
+
+/**
+ * Generate all zeros to fill a data vector.
+ * @param data the data vector to fill.
+ */
+void DataAllZeros::generate_data(vector&lt;Element&gt;&amp; data, int size)
+{
+    for (int i = 0; i &lt; size; i++) data.push_back(Element(0));
+}
+</pre>
+<p class="caption">DataAllZeros.h:</p>
+<pre>#ifndef DATAALLZEROS_H_
+#define DATAALLZEROS_H_
+
+#include "DataGenerator.h"
+#include "Element.h"
+
+/**
+ * Generator for data that is all zeros.
+ */
+class DataAllZeros: public DataGenerator
+{
+public:
+    DataAllZeros();
+    virtual ~DataAllZeros();
+
+    virtual void generate_data(vector&lt;Element&gt;&amp; data, int size);
+};
+
+#endif /* DATAALLZEROS_H_ */
+</pre>
+<p class="caption">DataGenerator.cpp:</p>
+<pre>#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "DataGenerator.h"
+
+using namespace std;
+
+/**
+ * Constructor.
+ * @param name the name of this generator.
+ */
+DataGenerator::DataGenerator(string name) : name(name) {}
+
+/**
+ * Destructor.
+ */
+DataGenerator:: ~DataGenerator() {}
+
+/**
+ * Getter
+ * @return the name of this generator.
+ */
+string DataGenerator::get_name() { return name; }
+</pre>
+<p class="caption">DataGenerator.h:</p>
+<pre>#ifndef DATAGENERATOR_H_
+#define DATAGENERATOR_H_
+
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "Element.h"
+
+using namespace std;
+
+/**
+ * Abstract base class of the data generator subclasses.
+ */
+class DataGenerator
+{
+public:
+    DataGenerator(string name);
+    virtual ~DataGenerator();
+
+    virtual string get_name();
+    virtual void generate_data(vector&lt;Element&gt;&amp; data, int size) = 0;
+
+private:
+    string name;
+};
+
+#endif /* DATAGENERATOR_H_ */
+</pre>
+<p class="caption">DataRandom.cpp:</p>
+<pre>#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+#include "DataRandom.h"
+#include "Element.h"
+
+/**
+ * Default constructor.
+ */
+DataRandom::DataRandom() : DataGenerator("Unsorted random") {}
+
+/**
+ * Destructor.
+ */
+DataRandom::~DataRandom() {}
+
+/**
+ * Generate random values to fill a data vector.
+ * Reuse previously generated data if possible.
+ * @param data the target data vector.
+ * @param size the number of random data elements to generate.
+ */
+void DataRandom::generate_data(vector&lt;Element&gt;&amp; data, int size)
+{
+    data.clear();
+
+    // Reuse previously generated random data.
+    if (random_data.size() == size)
+    {
+        data = random_data;
+    }
+
+    // Generate new random data.
+    else
+    {
+        random_data.clear();
+        srand(time(NULL));  // seed the random number generator
+
+        for (int i = 0; i &lt; size; i++)
+        {
+            long r = rand()%size;
+            Element elmt(r);
+            random_data.push_back(elmt);
+            data.push_back(elmt);
+        }
+    }
+}
+</pre>
+<p class="caption">DataRandom.h:</p>
+<pre>#ifndef DATARANDOM_H_
+#define DATARANDOM_H_
+
+#include "DataGenerator.h"
+#include "Element.h"
+
+/**
+ * Generator for unsorted random data.
+ */
+class DataRandom: public DataGenerator
+{
+public:
+    DataRandom();
+    virtual ~DataRandom();
+
+    void generate_data(vector&lt;Element&gt;&amp; data, int size);
+
+private:
+    vector&lt;Element&gt; random_data;
+};
+
+#endif /* DATARANDOM_H_ */
+</pre>
+<p class="caption">DataReverseSorted.cpp:</p>
+<pre>#include "DataReverseSorted.h"
+
+/**
+ * Default constructor.
+ */
+DataReverseSorted::DataReverseSorted() : DataGenerator("Reverse sorted") {}
+
+/**
+ * Destructor.
+ */
+DataReverseSorted:: ~DataReverseSorted() {}
+
+/**
+ * Generate reverse sorted values (high to low) to fill a data vector.
+ * @param data the data vector to fill.
+ */
+void DataReverseSorted::generate_data(vector&lt;Element&gt;&amp; data, int size)
+{
+    for (long i = 0; i &lt; size; i++) data.push_back(Element(size - i));
+}
+</pre>
+<p class="caption">DataReverseSorted.h:</p>
+<pre>#ifndef DATAREVERSESORTED_H_
+#define DATAREVERSESORTED_H_
+
+#include "DataGenerator.h"
+#include "Element.h"
+
+/**
+ * Generator for reverse-sorted data.
+ */
+class DataReverseSorted: public DataGenerator
+{
+public:
+    DataReverseSorted();
+    virtual ~DataReverseSorted();
+
+    virtual void generate_data(vector&lt;Element&gt;&amp; data, int size);
+};
+
+#endif /* DATAREVERSESORTED_H_ */
+</pre>
+<p class="caption">DataSorted.cpp:</p>
+<pre>#include "DataSorted.h"
+
+/**
+ * Default constructor.
+ */
+DataSorted::DataSorted() : DataGenerator("Already sorted") {}
+
+/**
+ * Destructor.
+ */
+DataSorted:: ~DataSorted() {}
+
+/**
+ * Generate already sorted values (low to high) to fill a vector.
+ * @param data the data vector to fill.
+ */
+void DataSorted::generate_data(vector&lt;Element&gt;&amp; data, int size)
+{
+    for (long i = 0; i &lt; size; i++) data.push_back(Element(i));
+}
+</pre>
+<p class="caption">DataSorted.h:</p>
+<pre>#ifndef DATASORTED_H_
+#define DATASORTED_H_
+
+#include "DataGenerator.h"
+#include "Element.h"
+
+/**
+ * Generator for already sorted data.
+ */
+class DataSorted: public DataGenerator
+{
+public:
+    DataSorted();
+    virtual ~DataSorted();
+
+    virtual void generate_data(vector&lt;Element&gt;&amp; data, int size);
+};
+
+#endif /* DATASORTED_H_ */
+</pre>
+<p class="caption">InsertionSort.h:</p>
+<pre>#ifndef INSERTIONSORT_H_
+#define INSERTIONSORT_H_
+
+#include "VectorSorter.h"
+
+/**
+ * The class that implements the insertion sort algorithm
+ * for a vector of data.
+ */
+class InsertionSort: public VectorSorter
+{
+public:
+    InsertionSort(string name);
+    virtual ~InsertionSort();
+
+    virtual void run_sort_algorithm() throw (string);
+};
+
+#endif /* INSERTIONSORT_H_ */
+</pre>
+<p class="caption">LinkedList.h:</p>
+<pre>#ifndef LINKEDLIST_H_
+#define LINKEDLIST_H_
+
+#include "Node.h"
+
+/**
+ * The linked list class for the mergesort algorithm.
+ */
+class LinkedList
+{
+public:
+    LinkedList();
+    LinkedList(Node *head, Node *tail, const int size);
+    virtual ~LinkedList();
+
+    Node *get_head() const;
+    Node *get_tail() const;
+    int   get_size() const;
+
+    void set(Node *head, Node *tail, int size);
+    Node *remove_head();
+
+    void add(const Element&amp; elmt);
+    void add(Node *node);
+
+    void clear();  // set head and tail to nullptr and delete all the nodes
+    void reset();  // set head and tail to nullptr but don't delete the nodes
+    void print() const;
+
+    void split(LinkedList&amp; list1, LinkedList&amp; list2);
+    void concatenate(LinkedList&amp; other_list);
+
+private:
+    Node *head;
+    Node *tail;
+    int size;
+};
+
+#endif /* LINKEDLIST_H_ */
+</pre>
+<p class="caption">ListSorter.cpp:</p>
+<pre>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include "Element.h"
+#include "ListSorter.h"
+
+/**
+ * Constructor.
+ * @param name the name of the algorithm.
+ */
+ListSorter::ListSorter(string name) : Sorter(name) {}
+
+/**
+ * Destructor.
+ */
+ListSorter::~ListSorter() {}
+
+/**
+ * Generate the data to sort. The data can be random,
+ * already sorted, sorted in reverse, or all zeros.
+ * @param generator the data generator.
+ * @param size the number of data elements.
+ */
+void ListSorter::generate_data(DataGenerator *generator, int size)
+{
+    clear_data();
+
+    vector&lt;Element&gt; v;
+    generator-&gt;generate_data(v, size);
+
+    for (int i = 0; i &lt; size; i++) data.add(v[i]);
+    set_size(size);
+}
+
+/**
+ * Print the data elements.
+ */
+void ListSorter::print_data() const
+{
+    Node *ptr = data.get_head();
+
+    while (ptr != nullptr)
+    {
+        cout &lt;&lt; " " &lt;&lt; ptr-&gt;element.get_value();
+        ptr = ptr-&gt;next;
+    }
+
+    cout &lt;&lt; endl;
+}
+
+/**
+ * Verify that the data is correctly sorted.
+ * @return true if correctly sorted, else false.
+ */
+bool ListSorter::is_data_sorted() const
+{
+    Node *ptr = data.get_head();
+
+    // Chase next pointers from start to end.
+    while ((ptr != nullptr) &amp;&amp; (ptr-&gt;next != nullptr))
+    {
+        if (ptr-&gt;element.get_value() &gt; ptr-&gt;next-&gt;element.get_value()) return false;  // incorrect
+        ptr = ptr-&gt;next;
+    }
+
+    return true;  // correct
+}
+
+/**
+ * Clear the data.
+ */
+void ListSorter::clear_data()
+{
+    if (data.get_size() &gt; 0) data.clear();
+}
+</pre>
+<p class="caption">ListSorter.h:</p>
+<pre>#ifndef LISTSORTER_H_
+#define LISTSORTER_H_
+
+#include &lt;string&gt;
+#include "Sorter.h"
+#include "LinkedList.h"
+
+/**
+ * Abstract base class of the singly linked list sorting algorithms.
+ */
+class ListSorter: public Sorter
+{
+public:
+    ListSorter(string name);
+    virtual ~ListSorter();
+
+    virtual void generate_data(DataGenerator *generator, int size);
+    void print_data() const;
+    void clear_data();
+
+protected:
+    LinkedList data;  // the data to sort
+
+    bool is_data_sorted() const;
+};
+
+#endif /* LISTSORTER_H_ */
+</pre>
+<p class="caption">MergeSort.h:</p>
+<pre>#ifndef MERGESORT_H_
+#define MERGESORT_H_
+
+#include &lt;string&gt;
+#include "LinkedList.h"
+#include "ListSorter.h"
+
+/**
+ * The class that implements the mergesort algorithm
+ * for a singly linked list of data.
+ */
+class MergeSort: public ListSorter
+{
+public:
+    MergeSort(string name);
+    virtual ~MergeSort();
+
+    virtual void run_sort_algorithm() throw (string);
+
+private:
+    void mergesort(LinkedList&amp; list);
+    void merge(LinkedList&amp; list, LinkedList&amp; sublist1, LinkedList&amp; sublist2);
+
+    void clear();
+};
+
+#endif /* MERGESORT_H_ */
+</pre>
+<p class="caption">QuickSortOptimal.h:</p>
+<pre>#ifndef QUICKSORTOPTIMAL_H_
+#define QUICKSORTOPTIMAL_H_
+
+#include "QuickSorter.h"
+
+/**
+ * The class that implements the optimal quicksort algorithm
+ * for a vector of data by using a good pivot strategy.
+ */
+class QuickSortOptimal: public QuickSorter
+{
+public:
+    QuickSortOptimal(string name);
+    virtual ~QuickSortOptimal();
+
+private:
+    virtual Element&amp; choose_pivot_strategy(const int left, const int right);
+};
+
+#endif /* QUICKSORTOPTIMAL_H_ */
+</pre>
+<p class="caption">QuickSortSuboptimal.h:</p>
+<pre>#ifndef QUICKSORTSUBOPTIMAL_H_
+#define QUICKSORTSUBOPTIMAL_H_
+
+#include "QuickSorter.h"
+
+/**
+ * The class that implements the suboptimal quicksort algorithm
+ * for a vector of data by using a bad pivot strategy.
+ */
+class QuickSortSuboptimal: public QuickSorter
+{
+public:
+    QuickSortSuboptimal(string name);
+    virtual ~QuickSortSuboptimal();
+
+private:
+    virtual Element&amp; choose_pivot_strategy(const int left, const int right);
+};
+
+#endif /* QUICKSORTSUBOPTIMAL_H_ */
+</pre>
+<p class="caption">QuickSorter.h:</p>
+<pre>#ifndef QUICKSORTER_H_
+#define QUICKSORTER_H_
+
+#include &lt;string&gt;
+#include "VectorSorter.h"
+#include "Element.h"
+
+/**
+ * The abstract base class of the quicksort algorithms.
+ */
+class QuickSorter: public VectorSorter
+{
+public:
+    QuickSorter(string name);
+    virtual ~QuickSorter();
+
+    virtual void run_sort_algorithm() throw (string);
+
+protected:
+    virtual Element&amp; choose_pivot_strategy(const int left, const int right) = 0;
+
+private:
+    void quicksort(const int left, const int right);
+    int partition(const int left, const int right, const Element&amp; pivot);
+    Element&amp; choose_pivot(const int left, const int right);
+};
+
+#endif /* QUICKSORTER_H_ */
+</pre>
+<p class="caption">SelectionSort.cpp:</p>
+<pre>#include "SelectionSort.h"
+
+/**
+ * Constructor.
+ * @param name the name of this algorithm.
+ */
+SelectionSort::SelectionSort(string name) : VectorSorter(name) {}
+
+/**
+ * Destructor.
+ */
+SelectionSort::~SelectionSort() {}
+
+/**
+ * Run the selection sort algorithm.
+ * @throws an exception if an error occurred.
+ */
+void SelectionSort::run_sort_algorithm() throw (string)
+{
+    int sizem1 = size - 1;
+
+    // For each element of the vector ...
+    for (int i = 0; i &lt; sizem1; i++)
+    {
+        Element smallest = data[i];
+        int index_of_smallest = i;
+
+        // ... find the index of the smallest value
+        // in the rest of the vector.
+        for (int j = i + 1; j &lt; size; j++)
+        {
+            compare_count++;
+
+            if (data[j] &lt; smallest)
+            {
+                smallest = data[j];
+                index_of_smallest = j;
+            }
+        }
+
+        // Swap in the smallest value if it isn't already there.
+        if (i != index_of_smallest) swap(i, index_of_smallest);
+    }
+}
+</pre>
+<p class="caption">SelectionSort.h:</p>
+<pre>#ifndef SELECTIONSORT_H_
+#define SELECTIONSORT_H_
+
+#include "VectorSorter.h"
+
+/**
+ * The class that implements the selection sort algorithm
+ * for a vector of data.
+ */
+class SelectionSort: public VectorSorter
+{
+public:
+    SelectionSort(string name);
+    virtual ~SelectionSort();
+
+    virtual void run_sort_algorithm() throw (string);
+};
+
+#endif /* SELECTIONSORT_H_ */
+</pre>
+<p class="caption">ShellSortOptimal.h:</p>
+<pre>#ifndef SHELLSORTOPTIMAL_H_
+#define SHELLSORTOPTIMAL_H_
+
+#include "VectorSorter.h"
+
+/**
+ * The class that implements the optimal shellsort algorithm
+ * for a vector of data, where the diminishing increment is
+ * calculated according to Don Knuth.
+ */
+class ShellSortOptimal: public VectorSorter
+{
+public:
+    ShellSortOptimal(string name);
+    virtual ~ShellSortOptimal();
+
+    virtual void run_sort_algorithm() throw (string);
+};
+
+#endif /* SHELLSORTOPTIMAL_H_ */
+</pre>
+<p class="caption">ShellSortSuboptimal.h:</p>
+<pre>#ifndef SHELLSORTSUBOPTIMAL_H_
+#define SHELLSORTSUBOPTIMAL_H_
+
+#include "VectorSorter.h"
+
+/**
+ * The class that implements the suboptimal Shellsort algorithm
+ * for a vector of data, where the diminishing increment is halved
+ * for each pass.
+ */
+class ShellSortSuboptimal: public VectorSorter
+{
+public:
+    ShellSortSuboptimal(string name);
+    virtual ~ShellSortSuboptimal();
+
+    virtual void run_sort_algorithm() throw (string);
+};
+
+#endif /* SHELLSORTSUBOPTIMAL_H_ */
+</pre>
+<p class="caption">SortTests.cpp:</p>
+<pre>//SAMPLE
+
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;string&gt;
+#include &lt;ctime&gt;
+#include &lt;chrono&gt;
+#include "DataRandom.h"
+#include "DataSorted.h"
+#include "DataReverseSorted.h"
+#include "DataAllZeros.h"
+#include "SelectionSort.h"
+#include "InsertionSort.h"
+#include "ShellSortSuboptimal.h"
+#include "ShellSortOptimal.h"
+#include "QuickSortSuboptimal.h"
+#include "QuickSortOptimal.h"
+#include "MergeSort.h"
+
+using namespace std;
+using namespace std::chrono;
+
+bool do_sort(Sorter *sorter, int n, DataGenerator *generator);
+void output_sort_stats(bool sorted, const Sorter *sorter);
+string commafy(long n);
+
+/**
+ * Main.
+ */
+int main()
+{
+    bool sorted;
+
+    // Number of data items to test.
+    int N[] = {10, 100, 1000, 10000};
+
+    // Sorting algorithms.
+    Sorter *sorters[] =
+    {
+        new SelectionSort("Selection sort"),
+        new InsertionSort("Insertion sort"),
+        new ShellSortSuboptimal("Shellsort suboptimal"),
+        new ShellSortOptimal("Shellsort optimal"),
+        new QuickSortSuboptimal("Quicksort suboptimal"),
+        new QuickSortOptimal("Quicksort optimal"),
+        new MergeSort("Mergesort"),
+    };
+
+    // Data generators.
+    DataGenerator *generators[] =
+    {
+        new DataRandom(),
+        new DataSorted(),
+        new DataReverseSorted(),
+        new DataAllZeros(),
+    };
+
+    steady_clock::time_point start_time = steady_clock::now();
+
+    // Loop for each data generator.
+    for (DataGenerator *generator : generators)
+    {
+        string generator_name = generator-&gt;get_name();
+
+        cout &lt;&lt; endl;
+        for (int i = 0; i &lt; generator_name.length(); i++) cout &lt;&lt; "=";
+        cout &lt;&lt; endl &lt;&lt; generator_name &lt;&lt; endl;
+        for (int i = 0; i &lt; generator_name.length(); i++) cout &lt;&lt; "=";
+        cout &lt;&lt; endl;
+
+        // Loop for each data size.
+        for (int n : N)
+        {
+            cout &lt;&lt; endl &lt;&lt; "N = " &lt;&lt; commafy(n) &lt;&lt; endl &lt;&lt; endl;
+            cout &lt;&lt; setw(25) &lt;&lt; "ALGORITHM" &lt;&lt; setw(12) &lt;&lt; "COPIES"
+                 &lt;&lt; setw(12) &lt;&lt; "DESTRUCTS" &lt;&lt; setw(12) &lt;&lt; "MOVES"
+                 &lt;&lt; setw(12) &lt;&lt; "COMPARES"  &lt;&lt; setw(12) &lt;&lt; "MILLISECS"
+                 &lt;&lt; endl;
+
+            // Loop for each sorting algorithm.
+            for (Sorter *sorter : sorters)
+            {
+                cout &lt;&lt; setw(25) &lt;&lt; sorter-&gt;get_name();
+                sorted = do_sort(sorter, n, generator);
+                output_sort_stats(sorted, sorter);
+
+                // Clean up after a sort.
+                sorter-&gt;clear_data();
+            }
+        }
+    }
+
+    // Pick up the garbage.
+    for (Sorter *sorter : sorters) delete sorter;
+    for (DataGenerator *generator : generators) delete generator;
+
+    steady_clock::time_point end_time = steady_clock::now();
+    long elapsed_time = duration_cast&lt;seconds&gt;(end_time - start_time).count();
+    cout &lt;&lt; endl &lt;&lt; "Done! " &lt;&lt; elapsed_time &lt;&lt; " seconds." &lt;&lt; endl;
+    return 0;
+}
+
+/**
+ * Perform a sort with a given algorithm and data generator.
+ * @param sorter the sorting algorithm.
+ * @param n the number of data elements to sort.
+ * @param generator the data generator.
+ */
+bool do_sort(Sorter *sorter, int n, DataGenerator *generator)
+{
+    // Generate data for the algorithm to sort.
+    sorter-&gt;generate_data(generator, n);
+
+    try
+    {
+        return sorter-&gt;sort();  // do a sort
+    }
+    catch (string&amp; message)
+    {
+        cout &lt;&lt; endl &lt;&lt; message &lt;&lt; endl;
+        return false;
+    }
+}
+
+/**
+ * Output a sort algorithm's move and compare counts and elapsed time.
+ * @param sorted true if correctly sorted, else false.
+ * @param sorter the sorting algorithm.
+ */
+void output_sort_stats(bool sorted, const Sorter *sorter)
+{
+    if (sorted)
+    {
+        cout &lt;&lt; setw(12) &lt;&lt; commafy(sorter-&gt;get_copy_count());
+        cout &lt;&lt; setw(12) &lt;&lt; commafy(sorter-&gt;get_destructor_count());
+        cout &lt;&lt; setw(12) &lt;&lt; commafy(sorter-&gt;get_move_count());
+        cout &lt;&lt; setw(12) &lt;&lt; commafy(sorter-&gt;get_compare_count());
+        cout &lt;&lt; setw(12) &lt;&lt; commafy(sorter-&gt;get_elapsed_ms());
+        cout &lt;&lt; endl;
+    }
+    else
+    {
+        cout &lt;&lt; "***** Sort error! *****" &lt;&lt; endl;
+    }
+}
+
+/**
+ * Convert a number to a string with commas.
+ * @param n the number.
+ */
+string commafy(long n)
+{
+    string str = to_string(n);
+    int pos = str.length() - 3;
+
+    while (pos &gt; 0)
+    {
+        str.insert(pos, ",");
+        pos -= 3;
+    }
+
+    return str;
+}
+</pre>
+<p class="caption">Sorter.cpp:</p>
+<pre>#include "Sorter.h"
+#include "Element.h"
+
+using namespace std;
+
+/**
+ * Constructor.
+ * @param name the name of the sorting algorithm.
+ */
+Sorter::Sorter(string name)
+    : size(0), move_count(0), compare_count(0), name(name), elapsed_time(0) {}
+
+/**
+ * Destructor.
+ */
+Sorter::~Sorter() {}
+
+string Sorter::get_name() const { return name; }
+
+/**
+ * Get the data size.
+ * @return the size.
+ */
+int Sorter::get_size() const  { return size; }
+
+/**
+ * Set the data size.
+ * @param sz the size to set.
+ */
+void Sorter::set_size(int sz) { size = sz; }
+
+/**
+ * Get the number of moves during a sort.
+ * @return the number of moves.
+ */
+long Sorter::get_move_count() const      { return move_count; }
+
+/**
+ * Get the number of compares during a sort.
+ * @return the number of compares.
+ */
+long Sorter::get_compare_count() const      { return compare_count; }
+
+/**
+ * @return the element copy count.
+ */
+long Sorter::get_copy_count() const { return Element::get_copy_count(); }
+
+/**
+ * @return the element destructor count.
+ */
+long Sorter::get_destructor_count()  const { return Element::get_destructor_count(); }
+
+/**
+ * Sort the data by invoking the sorting algorithm.
+ * Count the number of data element moves and compares.
+ * Calculate the elapsed time in milliseconds.
+ * @throws an exception if an error occurred.
+ */
+bool Sorter::sort() throw (string)
+{
+    move_count = 0;
+    compare_count = 0;
+    Element::reset();
+
+    start_timer();
+
+    // Sort the data according to the algorithm
+    // that is defined by the sorting subclasses.
+    run_sort_algorithm();
+
+    stop_timer();
+    return is_data_sorted();
+}
+
+/**
+ * Start the timer before beginning a sort.
+ */
+void Sorter::start_timer() { timer = steady_clock::now(); }
+
+/**
+ * Stop the timer after the sort finishes.
+ */
+void Sorter::stop_timer()
+{
+    steady_clock::time_point now = steady_clock::now();
+    elapsed_time = duration_cast&lt;milliseconds&gt;(now - timer).count();
+}
+
+/**
+ * Calculate the elapsed sort time.
+ * @return the elapsed time in milliseconds.
+ */
+long Sorter::get_elapsed_ms() const { return elapsed_time; }
+</pre>
+<p class="caption">Sorter.h:</p>
+<pre>#ifndef SORTER_H_
+#define SORTER_H_
+
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;ctime&gt;
+#include &lt;chrono&gt;
+#include "DataGenerator.h"
+
+using namespace std;
+using namespace std::chrono;
+
+/**
+ * The abstract base class of the sorting algorithms.
+ */
+class Sorter
+{
+public:
+    Sorter(string name);
+    virtual ~Sorter();
+
+    // Name of the sorting algorithm.
+    string get_name() const;
+
+    // Size (number of data elements) to sort.
+    int get_size() const;
+    void set_size(int sz);
+
+    // Get the number of data element moves and compares
+    // during a sort, and the elapsed time in milliseconds.
+    long get_move_count() const;
+    long get_compare_count() const;
+    long get_elapsed_ms() const;
+
+    long get_constructor_count() const;
+    long get_copy_count() const;
+    long get_destructor_count() const;
+
+    // Abstract functions to generate the data to sort.
+    virtual void generate_data(DataGenerator* generator, int size) = 0;
+
+    // Sort the data. Not abstract!
+    virtual bool sort() throw (string);
+
+    virtual void clear_data() = 0;
+    virtual void print_data() const = 0;  // useful for debugging
+
+protected:
+    int size;            // number of data elements to sort
+    long move_count;     // count of data element moves during a sort
+    long compare_count;  // count of data element compares during a sort
+
+    // Abstract functions to run a sort algorithm
+    // and to verify a correct sort.
+    virtual void run_sort_algorithm() throw (string) = 0;
+    virtual bool is_data_sorted() const = 0;
+
+private:
+    string name;
+
+    steady_clock::time_point timer;
+    long elapsed_time;
+
+    void start_timer();
+    void stop_timer();
+};
+
+#endif /* SORTER_H_ */
+</pre>
+<p class="caption">VectorSorter.cpp:</p>
+<pre>#include &lt;iostream&gt;
+#include &lt;ctime&gt;
+
+#include "VectorSorter.h"
+
+VectorSorter::VectorSorter(string name) : Sorter(name) {}
+
+/**
+ * Destructor.
+ */
+VectorSorter::~VectorSorter() {}
+
+/**
+ * Generate the data to sort. The data can be random,
+ * already sorted, sorted in reverse, or all zeros.
+ * @param generator the data generator.
+ * @param size the number of data elements.
+ */
+void VectorSorter::generate_data(DataGenerator *generator, int size)
+{
+    clear_data();
+    generator-&gt;generate_data(data, size);
+    set_size(size);
+}
+
+/**
+ * Print the data elements.
+ */
+void VectorSorter::print_data() const
+{
+    int size = get_size();
+    for (int i = 0; i &lt; size; i++) cout &lt;&lt; " " &lt;&lt; data[i];
+
+    cout &lt;&lt; endl;
+}
+
+/**
+ * Verify that the data is correctly sorted.
+ * @return true if correctly sorted, else false.
+ */
+bool VectorSorter::is_data_sorted() const
+{
+    int sizem1 = get_size() - 1;
+    for (int i = 0; i &lt; sizem1; i++)
+    {
+        if (data[i] &gt; data[i+1]) return false;  // incorrect
+    }
+
+    return true;  // correct
+}
+
+/**
+ * Clear the data.
+ */
+void VectorSorter::clear_data()
+{
+    if (data.size() &gt; 0) data.clear();
+}
+
+/**
+ * Exchange the values of two data elements.
+ * Counts as two moves.
+ */
+void VectorSorter::swap(const int index1, const int index2)
+{
+    Element temp = data[index1];
+    data[index1] = data[index2];
+    data[index2] = temp;
+
+    move_count += 2;
+}
+</pre>
+<p class="caption">VectorSorter.h:</p>
+<pre>#ifndef VECTORSORTER_H_
+#define VECTORSORTER_H_
+
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "Sorter.h"
+#include "Element.h"
+using namespace std;
+
+/**
+ * Abstract base class of the vector sorting subclasses.
+ */
+class VectorSorter: public Sorter
+{
+public:
+    VectorSorter(string name);
+    virtual ~VectorSorter();
+
+    virtual void generate_data(DataGenerator *generator, int size);
+    void clear_data();
+    void print_data() const;
+
+protected:
+    vector&lt;Element&gt; data;  // the vector to sort
+
+    bool is_data_sorted() const;
+    void swap(const int index1, const int index2);
+};
+
+#endif /* VECTORSORTER_H_ */
+</pre>
+<p class="header score">Score</p>
+<p class="score">0</p>
+<p class="download"><a href="Element.signed.zip">Download</a></p>
+<div class="footnotes"><div class="footnote">2017-04-27T21:44:31Z</div>
+</div>
+</body></html>
