@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Version" content="0.3"/>
+<meta name="Submission" content="/tmp/codecheck/17021423156694746783268911612"/>
+<meta name="Problem" content="17011724027ahzerajkrgzg2kd682p363d4"/>
+<meta name="Level" content="1"/>
+<meta name="Time" content="2017-02-14T23:15:46Z"/>
+<meta name="ID" content="spirals"/>
+<meta name="User" content="170201102462wbhq1nu6ahro91obr71o1fl"/>
+<meta name="Elapsed" content="1397 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Testing spirals.cpp</p>
+<pre class="output">Spiral of size 1 starting at 1
+
+  1 
+
+Spiral of size 5 starting at 1
+
+ 17  16  15  14  13 
+ 18   5   4   3  12 
+ 19   6   1   2  11 
+ 20   7   8   9  10 
+ 21  22  23  24  25 
+
+Spiral of size 9 starting at 11
+
+ 75  74  73  72  71  70  69  68  67 
+ 76  47  46  45  44  43  42  41  66 
+ 77  48  27  26  25  24  23  40  65 
+ 78  49  28  15  14  13  22  39  64 
+ 79  50  29  16  11  12  21  38  63 
+ 80  51  30  17  18  19  20  37  62 
+ 81  52  31  32  33  34  35  36  61 
+ 82  53  54  55  56  57  58  59  60 
+ 83  84  85  86  87  88  89  90  91 
+
+Spiral of size 12 starting at 13
+***** ERROR: Size 12 must be odd. 
+
+Spiral of size 15 starting at 17
+
+213 212 211 210 209 208 207 206 205 204 203 202 201 200 199 
+214 161 160 159 158 157 156 155 154 153 152 151 150 149 198 
+215 162 117 116 115 114 113 112 111 110 109 108 107 148 197 
+216 163 118  81  80  79  78  77  76  75  74  73 106 147 196 
+217 164 119  82  53  52  51  50  49  48  47  72 105 146 195 
+218 165 120  83  54  33  32  31  30  29  46  71 104 145 194 
+219 166 121  84  55  34  21  20  19  28  45  70 103 144 193 
+220 167 122  85  56  35  22  17  18  27  44  69 102 143 192 
+221 168 123  86  57  36  23  24  25  26  43  68 101 142 191 
+222 169 124  87  58  37  38  39  40  41  42  67 100 141 190 
+223 170 125  88  59  60  61  62  63  64  65  66  99 140 189 
+224 171 126  89  90  91  92  93  94  95  96  97  98 139 188 
+225 172 127 128 129 130 131 132 133 134 135 136 137 138 187 
+226 173 174 175 176 177 178 179 180 181 182 183 184 185 186 
+227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 
+
+</pre>
+<span class="pass">pass </span><p class="header studentFiles">Student files</p>
+<p class="caption">spirals.cpp:</p>
+<pre>/* Assignment #3.b.: Spirals
+ * Author: Manika Kapoor
+ * Student ID: 011539203
+*/
+
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+const int MAX_SIZE  = 101;  // maximum size of the square matrix
+const int MAX_START = 50;   // maximum starting number
+
+void do_spiral(const int n, const int start);
+//function to check the validity of the 2D-array size and the start number
+//Precondition : The values of both parameters are put
+//Postcondition: If the 2D-array has odd size &lt;= MAX_SIZE and starting number &lt;= MAX_START
+//               then the function is valid else an Error message is displayed
+
+void make_spiral(int matrix[MAX_SIZE][MAX_SIZE], int size, int start);
+//function to store the elements in the spiral (anti-clockwise) arrangement with starting number at the center of the 2D-array
+//Precondition : A valid 2D-array size and start number must be there
+//Postcondition: The elements are stored in spiral (anti-clockwise) fashion in the 2D-array with start
+//               number at the center of the 2D-array
+
+void print_spiral(int matrix[MAX_SIZE][MAX_SIZE], int size);
+//function to print the spiral arrangement of elements in 2D-array
+//Precondition : The elements must stored in spiral (anti-clockwise) fashion in the 2D-array with start
+//               number at the center of the 2D-array
+//Postcondition: The spiral arrangement of elements in 2D-array is displayed on the screen
+
+  /*
+   * The main: Generate and print spirals of various sizes.
+  */
+
+int main()
+{
+
+    /* Function calls to check whether the entered parameters are resulting into valid 2D-array and
+     * starting number
+    */
+
+    do_spiral(1, 1);
+    do_spiral(5, 1);
+    do_spiral(9, 11);
+    do_spiral(12, 13);
+    do_spiral(15, 17);
+}
+
+void do_spiral(const int n, const int start)   //function to check the validity of the 2D-array size and the start number
+{
+	cout &lt;&lt; "Spiral of size " &lt;&lt; n &lt;&lt; " starting at " &lt;&lt; start;
+
+	if ( n % 2 != 0 &amp;&amp; start &lt;= MAX_START )                          //calling function make_spiral only if the size is odd
+	{
+		int matrix[MAX_SIZE][MAX_SIZE];
+		cout &lt;&lt; "\n";
+		cout &lt;&lt; "\n";
+		make_spiral(matrix, n, start);
+	}
+	else
+	{
+		cout &lt;&lt; "\n";
+		cout &lt;&lt; "***** ERROR: Size " &lt;&lt; n &lt;&lt; " must be odd. \n";
+		cout &lt;&lt; "\n";
+	}
+}
+
+void make_spiral(int matrix[MAX_SIZE][MAX_SIZE], int size, int start) //function to store elements in the spiral (anti-clockwise) arrangement with starting number at the center of the 2D-array
+{
+	int direction[2] = {0,1};                       //direction of motion (right) stored in direction array
+	int i, j;                                       //variables to iterate 2D array
+	int t_moves = 1;                                //total number of moves in one direction
+	int moves=1;                                    //number of moves taken out of total moves
+	int temp;                                       //Temporary variable used to swap the elements in direction array
+	i = (size-1)/2;
+	j = (size-1)/2;
+	matrix[i][j] = start;                           //storing start at the center of the 2D-array
+
+
+  /* Filling the array with elements in spiral(anti-clockwise) fashion by taking equal moves in two perpendicular
+   * directions and then increasing the total number of moves by 1. Starting with moving right total moves 1 and then
+   * changing the direction by 90 degrees counter-clockwise and then taking 1 move and then again changing
+   * direction by 90degrees counter-clockwise and increasing total moves by 1.
+  */
+	while ( i &lt; size &amp;&amp; j &lt; size &amp;&amp; t_moves &lt; size )
+	{
+		while (moves &lt;= t_moves)                    //movement towards right
+		{
+			i = i+direction[0];                     //setting the index of element to be filled
+			j = j+direction[1];                     //setting the index of element to be filled
+			start++;
+			matrix[i][j] = start;
+			moves++;
+		}
+
+		temp = direction[0];                        //changing direction by 90degrees counter-clockwise
+		direction[0] = -direction[1];
+		direction[1] = temp;
+
+		moves = 1;
+		while (moves &lt;= t_moves)                    //movement in another direction
+		{
+			i = i+direction[0];
+			j = j+direction[1];
+			start++;
+			matrix[i][j] = start;
+			moves++;
+		}
+		temp = direction[0];                        //changing direction by 90degrees counter-clockwise
+		direction[0] = -direction[1];
+		direction[1] = temp;
+		moves = 1;
+		t_moves++;
+	}
+	while (moves &lt;= (t_moves-1))                    //filling the last row of the 2D-array
+	{
+		i = i+direction[0];
+		j = j+direction[1];
+
+		start++;
+		matrix[i][j] = start;
+
+		moves++;
+	}
+
+	print_spiral(matrix, size);                     //function call to print the spiral arrangement of elements in 2D-array
+}
+
+void print_spiral(int matrix[MAX_SIZE][MAX_SIZE], int size) //function to print the spiral arrangement of elements in 2D-array
+{
+	for ( int i = 0; i&lt; size; i++)                              //printing 2D-array
+	{
+		for (int j=0; j&lt; size; j++)
+		{
+			cout &lt;&lt; right &lt;&lt; setw(3) &lt;&lt; matrix[i][j] &lt;&lt; " ";
+		}
+		cout &lt;&lt; endl;
+	}
+	cout &lt;&lt; "\n";
+}
+</pre>
+<p class="header score">Score</p>
+<p class="score">1/1</p>
+<p class="download"><a href="spirals.signed.zip">Download</a></p>
+<div class="footnotes"><div class="footnote">2017-02-14T23:15:46Z</div>
+</div>
+</body></html>
