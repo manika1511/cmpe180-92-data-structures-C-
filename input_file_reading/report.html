@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Version" content="0.3"/>
+<meta name="Submission" content="1702020709992855167212145972"/>
+<meta name="Problem" content="1701170532e3jbdmmyqrkasoot12cf0x03k"/>
+<meta name="Level" content="1"/>
+<meta name="Time" content="2017-02-02T07:09:19Z"/>
+<meta name="ID" content="presidents"/>
+<meta name="User" content="170201102462wbhq1nu6ahro91obr71o1fl"/>
+<meta name="Elapsed" content="1174 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Testing presidents.cpp</p>
+<pre class="output">First Name  Middle Name Last Name   Born Died  Age  Start End   Party
+----------  ----------- ---------   ---- ----  ---  ----- ----  -----
+George                  Washington  1732 1799   67   1789 1797  Federalist
+John                    Adams       1735 1826   91   1797 1801  Federalist
+Thomas                  Jefferson   1743 1826   83   1801 1809  Democratic-Republican
+James                   Madison     1751 1836   85   1809 1817  Democratic-Republican
+James                   Monroe      1758 1831   73   1817 1825  Democratic-Republican
+John        Quincy      Adams       1767 1848   81   1825 1829  Democratic-Republican
+Andrew                  Jackson     1767 1845   78   1829 1837  Democrat
+Martin                  van Buren   1782 1862   80   1837 1841  Democrat
+William     H.          Harrison    1773 1841   68   1841 1841  Whig
+John                    Tyler       1790 1862   72   1841 1845  Whig
+James       K.          Polk        1795 1849   54   1845 1849  Democrat
+Zachary                 Taylor      1784 1850   66   1849 1850  Whig
+Millard                 Fillmore    1800 1874   74   1850 1853  Whig
+Franklin                Pierce      1804 1869   65   1853 1857  Democrat
+James                   Buchanan    1791 1868   77   1857 1861  Democrat
+Abraham                 Lincoln     1809 1865   56   1861 1865  Republican
+Andrew                  Johnson     1808 1875   67   1865 1869  National-Union
+Ulysses     S.          Grant       1822 1885   63   1869 1877  Republican
+Rutherford              Hayes       1822 1893   71   1877 1881  Republican
+James                   Garfield    1831 1881   50   1881 1881  Republican
+Chester                 Arthur      1829 1886   57   1881 1885  Republican
+Grover                  Cleveland   1837 1908   71   1885 1889  Democrat
+Benjamin                Harrison    1833 1901   68   1889 1893  Republican
+Grover                  Cleveland   1837 1908   71   1893 1897  Democrat
+William                 McKinley    1843 1901   58   1897 1901  Republican
+Theodore                Roosevelt   1858 1919   61   1901 1909  Republican
+William                 Taft        1857 1930   73   1909 1913  Republican
+Woodrow                 Wilson      1856 1924   68   1913 1921  Democrat
+Warren                  Harding     1865 1923   58   1921 1923  Republican
+Calvin                  Coolidge    1872 1933   61   1923 1929  Republican
+Herbert     C.          Hoover      1874 1964   90   1929 1933  Republican
+Franklin    Delano      Roosevelt   1882 1945   63   1933 1945  Democrat
+Harry       S           Truman      1884 1972   88   1945 1953  Democrat
+Dwight      David       Eisenhower  1890 1969   79   1953 1961  Republican
+John        Fitzgerald  Kennedy     1917 1963   46   1961 1963  Democrat
+Lyndon      Baines      Johnson     1908 1973   65   1963 1969  Democrat
+Richard     Milhous     Nixon       1913 1994   81   1969 1974  Republican
+Gerald      R.          Ford        1913 2006   93   1974 1977  Republican
+James       Earl        Carter      1924             1977 1981  Democrat
+Ronald      Wilson      Reagan      1911 2004   93   1981 1989  Republican
+George      H. W.       Bush        1924             1989 1993  Republican
+William     Jefferson   Clinton     1946             1993 2001  Democrat
+George      W.          Bush        1946             2001 2009  Republican
+Barack                  Obama       1961             2009 2017  Democrat
+
+Average age at death = 70.9</pre>
+<span class="pass">pass </span><p class="header studentFiles">Student files</p>
+<p class="caption">presidents.cpp:</p>
+<pre>/* Assignment #1 : Presidents
+ * Author: Manika Kapoor
+ * Student ID: 011539203
+ */
+
+
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+#include &lt;iomanip&gt;
+#include &lt;locale&gt;
+
+using namespace std;
+
+const string INPUT_FILE_NAME = "presidents.in";
+
+// Declaring a structure to store the values of various fields
+struct ENTRY
+{
+	string first_name;
+	string middle_name;
+	string last_name;
+	string born;
+	string died;
+	string age;
+	string start;
+	string end;
+	string party;
+};
+
+int main()
+{
+    ifstream input;
+    struct ENTRY data;
+    int check=0;								 //variable to check whether the first word of the line has already been read or not
+    string word;
+    double total_age = 0;
+    int dead_pres = 0;
+    double average_age;
+    input.open(INPUT_FILE_NAME);
+
+    // Checking file open was successful or not
+    if (input.fail())
+    {
+        cout &lt;&lt; "Failed to open " &lt;&lt; "input.txt" &lt;&lt; endl;
+        return -1;
+    }
+
+    // Printing the column headings
+    cout &lt;&lt; setw(12) &lt;&lt; left &lt;&lt; "First Name" &lt;&lt; setw(12) &lt;&lt; left &lt;&lt; "Middle Name" &lt;&lt; setw(12) &lt;&lt; left &lt;&lt; "Last Name" &lt;&lt; setw(5) &lt;&lt; left &lt;&lt; "Born" &lt;&lt; setw(6) &lt;&lt; left &lt;&lt; "Died" &lt;&lt; setw(5) &lt;&lt; left &lt;&lt; "Age" &lt;&lt; setw(6) &lt;&lt; left &lt;&lt; "Start" &lt;&lt; setw(6) &lt;&lt; left &lt;&lt; "End" &lt;&lt; left &lt;&lt; "Party" &lt;&lt; endl;
+    cout &lt;&lt; "----------" &lt;&lt; "  " &lt;&lt; "-----------" &lt;&lt; " " &lt;&lt; "---------" &lt;&lt; "   " &lt;&lt; "----" &lt;&lt; " " &lt;&lt; "----" &lt;&lt; "  " &lt;&lt; "---" &lt;&lt; "  " &lt;&lt; "-----" &lt;&lt; " " &lt;&lt; "----" &lt;&lt; "  " &lt;&lt; "-----" &lt;&lt; endl;
+    while(!input.eof())
+		{
+    		while (word != ".")
+    		{
+    			string name[5];					 	//string array to store name parts (first, middle,last)
+    			int birth_year = 0, death_year = 0; //integer variables to read birth and death year
+    			int age = 0;						//integer variable to store age
+    			int t_end, t_start;					//variable to store the "start" year and "End" year
+    			int count=0;						// variable to check number of words in name (first, middle &amp; last name together)
+    			if (check == 0)						//check if the first word of the line has already been read or not
+    			{
+    				input &gt;&gt; word;
+    			}
+    			if (word == ".")					//check if the first word of the sentence is a period (".").
+    			{									//If yes, entire file has been read
+    				break;
+    			}
+
+    			while (word != "(")					//Counting the number of words in the name
+    			{									//first, middle and last name included
+    				name[count] = word;
+    				count++;
+    				input &gt;&gt; word;
+    			}
+
+    		    /* Checking for the various conditions of Names and then storing appropriate values in
+    		     * the structure */
+
+    			if (count == 2)
+    			{
+    				data.first_name = name[0];
+    				data.middle_name = " ";
+    				data.last_name = name[1];
+    			}
+    			if (count == 3)
+    			{
+    				data.first_name = name[0];
+    				if (isupper(name[1].at(0)))
+    				{
+    					data.middle_name = name[1];
+    					data.last_name = name[2];
+    				}
+    				else
+    				{
+    					data.middle_name = " ";
+    					data.last_name = name[1] + " " + name[2];
+    				}
+    			}
+    			if (count == 4)
+    			{
+    				data.first_name = name[0];
+    				if (isupper(name[1].at(0)))
+    				{
+    					if (isupper(name[2].at(0)))
+    					{
+    						data.middle_name = name[1] + " " + name[2];
+    						data.last_name = name[3];
+    					}
+    					else
+    					{
+    						data.middle_name = name[1];
+    						data.last_name = name[2] + " " + name[3];
+    					}
+    				}
+    				else
+    				{
+    					data.middle_name = " ";
+    					data.last_name = name[1] + " " + name[2] + " " + name[3];
+    				}
+    			}
+
+    			input &gt;&gt; birth_year;				      //reading birth year as an integer
+    			data.born = to_string(birth_year);
+    			input &gt;&gt; word;
+    			if (word == "-")
+    			{
+    				input &gt;&gt; death_year;				  //reading death year as an integer
+    				data.died = to_string(death_year);
+    				age = death_year - birth_year;		  //calculating age
+    				total_age = total_age + age;
+    				dead_pres = dead_pres + 1;
+    				data.age = to_string(age);
+    				input &gt;&gt; word;
+    			}
+    			else
+    			{
+    				data.died = " ";
+    				data.age = " ";
+    			}
+
+    			input &gt;&gt; word;
+    			data.party = word;
+
+    			input &gt;&gt; t_start;
+    			data.start = to_string(t_start);
+    			t_end = t_start;						  //storing "Start" year in t_end
+
+    			input &gt;&gt; word;
+    			if (word == "-")
+    			{
+    				input &gt;&gt; t_end;
+    				data.end = to_string(t_end);
+    				check = 0;
+    			}
+    			else
+    			{										   //storing "End" year same as "Start" year if there
+    				data.end = to_string(t_end);		   //is no "End" year and then setting check to 1 indicating
+    				check = 1;							   //that first word of next line has been read
+    			}
+
+    			//Printing out the output corresponding to eack line of input
+    			cout &lt;&lt; setw(12) &lt;&lt; left &lt;&lt; data.first_name &lt;&lt; setw(12) &lt;&lt; left &lt;&lt; data.middle_name &lt;&lt; setw(12) &lt;&lt; left &lt;&lt; data.last_name;
+    			cout &lt;&lt; setw(5) &lt;&lt; left &lt;&lt; data.born &lt;&lt; setw(7) &lt;&lt; left &lt;&lt; data.died &lt;&lt; setw(5) &lt;&lt; left &lt;&lt; data.age &lt;&lt; setw(5) &lt;&lt; left &lt;&lt; data.start &lt;&lt; setw(6) &lt;&lt; left &lt;&lt; data.end &lt;&lt; left &lt;&lt; data.party &lt;&lt; endl;
+    		}
+		}
+	//Calculating and displaying the "Average age at death" of presidents accurate to one decimal point
+    average_age = (total_age/dead_pres);
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(1);
+    cout &lt;&lt; endl &lt;&lt; "Average age at death = " &lt;&lt; average_age;
+    return 0;
+}
+</pre>
+<p class="header providedFiles">Provided files</p>
+<p class="caption">presidents.in:</p>
+<pre>George Washington ( 1732 - 1799 ) Federalist 1789 - 1797
+John Adams ( 1735 - 1826 ) Federalist 1797 - 1801
+Thomas Jefferson ( 1743 - 1826 ) Democratic-Republican 1801 - 1809
+James Madison ( 1751 - 1836 ) Democratic-Republican 1809 - 1817
+James Monroe ( 1758 - 1831 ) Democratic-Republican 1817 - 1825
+John Quincy Adams ( 1767 - 1848 ) Democratic-Republican 1825 - 1829
+Andrew Jackson ( 1767 - 1845 ) Democrat 1829 - 1837
+Martin van Buren ( 1782 - 1862 ) Democrat 1837 - 1841
+William H. Harrison ( 1773 - 1841 ) Whig 1841
+John Tyler ( 1790 - 1862 ) Whig 1841 - 1845
+James K. Polk ( 1795 - 1849 ) Democrat 1845 - 1849
+Zachary Taylor ( 1784 - 1850 ) Whig 1849 - 1850
+Millard Fillmore ( 1800 - 1874 ) Whig 1850 - 1853
+Franklin Pierce ( 1804 - 1869 ) Democrat 1853 - 1857
+James Buchanan ( 1791 - 1868 ) Democrat 1857 - 1861
+Abraham Lincoln ( 1809 - 1865 ) Republican 1861 - 1865
+Andrew Johnson ( 1808 - 1875 ) National-Union 1865 - 1869
+Ulysses S. Grant ( 1822 - 1885 ) Republican 1869 - 1877
+Rutherford Hayes ( 1822 - 1893 ) Republican 1877 - 1881
+James Garfield ( 1831 - 1881 ) Republican 1881
+Chester Arthur ( 1829 - 1886 ) Republican 1881 - 1885
+Grover Cleveland ( 1837 - 1908 ) Democrat 1885 - 1889
+Benjamin Harrison ( 1833 - 1901 ) Republican 1889 - 1893
+Grover Cleveland ( 1837 - 1908 ) Democrat 1893 - 1897
+William McKinley ( 1843 - 1901 ) Republican 1897 - 1901
+Theodore Roosevelt ( 1858 - 1919 ) Republican 1901 - 1909
+William Taft ( 1857 - 1930 ) Republican 1909 - 1913
+Woodrow Wilson ( 1856 - 1924 ) Democrat 1913 - 1921
+Warren Harding ( 1865 - 1923 ) Republican 1921 - 1923
+Calvin Coolidge ( 1872 - 1933 ) Republican 1923 - 1929
+Herbert C. Hoover ( 1874 - 1964 ) Republican 1929 - 1933
+Franklin Delano Roosevelt ( 1882 - 1945 ) Democrat 1933 - 1945
+Harry S Truman ( 1884 - 1972 ) Democrat 1945 - 1953
+Dwight David Eisenhower ( 1890 - 1969 ) Republican 1953 - 1961
+John Fitzgerald Kennedy ( 1917 - 1963 ) Democrat 1961 - 1963
+Lyndon Baines Johnson ( 1908 - 1973 ) Democrat 1963 - 1969
+Richard Milhous Nixon ( 1913 - 1994 ) Republican 1969 - 1974
+Gerald R. Ford ( 1913 - 2006 ) Republican 1974 - 1977
+James Earl Carter ( 1924 ) Democrat 1977 - 1981
+Ronald Wilson Reagan ( 1911 - 2004 ) Republican 1981 - 1989
+George H. W. Bush ( 1924 ) Republican 1989 - 1993
+William Jefferson Clinton ( 1946 ) Democrat 1993 - 2001
+George W. Bush ( 1946 ) Republican 2001 - 2009
+Barack Obama ( 1961 ) Democrat 2009 - 2017
+.
+</pre>
+<p class="header score">Score</p>
+<p class="score">1/1</p>
+<p class="download"><a href="presidents.signed.zip">Download</a></p>
+<div class="footnotes"><div class="footnote">2017-02-02T07:09:19Z</div>
+</div>
+</body></html>
