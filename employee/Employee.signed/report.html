@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Version" content="0.3"/>
+<meta name="Submission" content="/tmp/codecheck/17030622512430408679279828224"/>
+<meta name="Problem" content="1703040929alwnb99v81mqrg0uk694e8o8e"/>
+<meta name="Level" content="1"/>
+<meta name="Time" content="2017-03-06T22:51:48Z"/>
+<meta name="ID" content="Employee"/>
+<meta name="User" content="170201102462wbhq1nu6ahro91obr71o1fl"/>
+<meta name="Elapsed" content="2918 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Testing EmployeeApp.cpp</p>
+<pre class="output">+ 123: Employee{ID=123, last=MacDonald, first=Ron, salary=80000}
++ 100: Employee{ID=100, last=Brown, first=Bob, salary=150000}
+% 111: *** Invalid command ***
+? 111: *** ID not found ***
++ 222: Employee{ID=222, last=Kurtz, first=Karl, salary=175000}
+- 333: *** ID not found ***
++ 150: Employee{ID=150, last=Robins, first=Roberta, salary=200000}
++ 123: *** Duplicate ID ***
+? 123: Employee{ID=123, last=MacDonald, first=Ron, salary=80000}
+? 175: *** ID not found ***
+? 100: Employee{ID=100, last=Brown, first=Bob, salary=150000}
+- 100: Employee{ID=100, last=Brown, first=Bob, salary=150000}
+? 100: *** ID not found ***
++ 175: Employee{ID=175, last=Anderson, first=Amy, salary=125000}
+
+All employees
+-------------
+Employee{ID=123, last=MacDonald, first=Ron, salary=80000}
+Employee{ID=150, last=Robins, first=Roberta, salary=200000}
+Employee{ID=175, last=Anderson, first=Amy, salary=125000}
+Employee{ID=222, last=Kurtz, first=Karl, salary=175000}
+
+Statistics
+----------
+Minimum salary = $ 80000.00
+Maximum salary = $200000.00
+Average salary = $145000.00
+</pre>
+<span class="pass">pass </span><p class="header studentFiles">Student files</p>
+<p class="caption">Employee.cpp:</p>
+<pre>/* Assignment #6 : Employee Records
+ * Author: Manika Kapoor
+ * Student ID: 011539203
+*/
+
+//Employee.cpp file containing definations of class Employee member functions
+
+#include "Employee.h"
+#include &lt;fstream&gt;
+
+Employee::Employee()      //default constructor
+{
+	id = 0;            //setting id to 0
+	last = " ";        //setting last to blank
+	first = " ";       //setting first to blank
+	salary = 0;        //setting salary to 0
+}
+
+Employee::Employee(int a, string b, string c, double d) //contsructor
+{
+	id = a;           //setting id to a
+	last = b;         //setting last to b
+	first = c;        //setting first to c
+	salary = d;       //setting salary to d
+}
+
+Employee::~Employee() //default destructor
+{
+	;
+}
+
+int Employee::get_id() const   //accessor function to get id
+{
+	return id;
+}
+
+string Employee::get_last() const //accessor function to get last name
+{
+	return last;
+}
+
+string Employee::get_first() const  //accessor function to get first name
+{
+	return first;
+}
+
+double Employee::get_salary() const //accessor function to get salary
+{
+	return salary;
+}
+
+void Employee::set_id(int a)    //setter function to set id
+{
+	id = a;
+}
+
+void Employee::set_last(string b) //setter function to set last name
+{
+	last = b;
+}
+
+void Employee::set_first(string c) //setter function to set first name
+{
+	first = c;
+}
+
+void Employee::set_salary(double d) //setter function to set salary
+{
+	salary = d;
+}
+
+istream&amp; operator &gt;&gt;( istream&amp; ins, Employee &amp;e)  //function to overload &gt;&gt; operator
+{
+	string line;                //variable to store one line from input
+	string v1, v2;              //variable to store id and salary as a string
+	string last, first;         //variable to store last and first
+	int id;                     //integer to store id
+	double salary;              //double to store salary
+
+	//storing comma separated values in variables v1,last,first and v2
+	getline(ins, v1, ',');
+	getline(ins, last, ',');
+	getline(ins, first, ',');
+	getline(ins,v2,',');
+
+	id = stoi(v1);           //converting v1 string to integer and store it in id
+	e.set_id(id);            //set employee id to id
+
+	e.set_last(last);        //setting employee last name to last
+	e.set_first(first);      //setting employee first  name to first
+
+	salary = stod(v2);       //converting vr string to double and store it in salary
+	e.set_salary(salary);    //setting employee salary to salary
+
+	return ins;
+}
+
+ostream&amp; operator &lt;&lt; (ostream&amp; outs, Employee &amp;e)  //function to overload &gt;&gt; operator
+{
+	cout &lt;&lt; "Employee{ID=" &lt;&lt; e.get_id() &lt;&lt; ", "  &lt;&lt; "last=" &lt;&lt; e.get_last() &lt;&lt; ", " &lt;&lt; "first=" &lt;&lt; e.get_first() &lt;&lt; ", " &lt;&lt; "salary=" &lt;&lt; e.get_salary() &lt;&lt; "}" &lt;&lt; endl;
+	return outs;
+}
+</pre>
+<p class="caption">Employee.h:</p>
+<pre>//Header file containing class declaration
+
+#ifndef EMPLOYEE_H_
+#define EMPLOYEE_H_
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Employee               //declaring Employee class
+{
+public:
+    Employee();         //default constructor
+    Employee(int a, string b, string c, double d);//constructor
+    ~Employee();        //default destructor
+
+    //accessor functions
+    int get_id() const;
+    string get_last() const;
+    string get_first() const;
+    double get_salary() const;
+
+    //setter functions
+    void set_id(int a);
+    void set_last(string b);
+    void set_first(string c);
+    void set_salary(double d);
+
+    friend ostream&amp; operator &lt;&lt;(ostream&amp; outs, Employee &amp;e);
+    //function to overload &lt;&lt; operator
+
+    friend istream&amp; operator &gt;&gt;( istream&amp; ins, Employee &amp;e);
+    //function to overload &gt;&gt; operator
+
+private:
+    int id;             //variable to store employee ID
+    string last, first; //variables to store employee last and first name respectively
+    double salary;      //variable to store employee salary
+};
+
+#endif  EMPLOYEE_H_
+</pre>
+<p class="caption">EmployeeApp.cpp:</p>
+<pre>#include "Employee.h"         //including Employee header file
+#include &lt;fstream&gt;
+#include &lt;vector&gt;
+#include &lt;sstream&gt;
+#include &lt;cctype&gt;
+#include &lt;algorithm&gt;
+#include &lt;iomanip&gt;
+
+using namespace std;
+
+void execute(istream&amp; record, vector&lt;Employee&gt; &amp;list, char command);
+//function to execute the command
+//Precondition : The command ('+','?','-','%') has been read
+//Postcondition: The result of the command execution is displayed
+
+void print_all(vector&lt;Employee&gt; &amp;list);
+//function to print the sorted list of employees after execution of all commands
+//Precondition : all the commands are executed and employee records are manipulated accordingly
+//Postcondition: the employee records are displayed in sorted order
+
+void print_stats(vector&lt;Employee&gt; &amp;list);
+//function to print the maximum, minimum and average salary
+//Precondition : all the commands are executed and employee records are stored in sorted order
+//Postcondition: the maximum, minimum and average salary is displayed
+
+enum ERROR_CODE {NO_ERROR, DUPLICATE, NOT_FOUND, INVALID_COMMAND}; //error codes
+
+const string INPUT_FILE_NAME = "commands.in";   //input file
+
+int main()
+{
+    // Open the input file.
+    ifstream input;
+
+    input.open(INPUT_FILE_NAME);      //checking if opening the file is successful or not
+    if (input.fail())
+    {
+        cout &lt;&lt; "Failed to open " &lt;&lt; INPUT_FILE_NAME &lt;&lt; endl; //displaying error message if opening file is unsuccessful
+        return -1;
+    }
+
+    char command;              //variable to store the command ('+','?','-','%')
+    char ch;				   //variable to store the peeked value at the end of each command to check for eof
+    vector&lt;Employee&gt; list;	   //vector to store the Employee records
+
+    input &gt;&gt; command;          //input first command (i.e. '+')
+
+    while (!input.eof())
+    {
+    	execute(input, list, command);   //function call to execute the command
+    	ch = input.peek();               //peek the next char
+    	if (ch == input.eof())
+    	{
+    	    break;                       //breaking out of loop if the next char is eof
+    	}
+    	input &gt;&gt; command;                //input the next command
+    }
+
+    print_all(list);                     //function call to print the sorted list of employees after execution of all commands
+    print_stats(list);                   //function call to print the maximum, minimum and average salary
+
+    return 0;
+}
+
+void execute(istream&amp; input , vector&lt;Employee&gt; &amp;list, char command)   //function to execute the command
+{
+	Employee e;         //variable to input employee record
+	string line;        //variable to store line of input file
+	int i;              //variable to iterate over the vector of employee records
+	ERROR_CODE error;   //variable to store error code
+
+	if (command == '+')    //adding record if command is '+'
+	{
+		int size = list.size();    //calculating size of vector list
+
+		input &gt;&gt; ws;
+		getline(input,line);       //input a line from input file
+		istringstream record(line);//converting string line in input stream and store in record
+
+		record &gt;&gt; e;               //input the employee record
+
+		for (int i=0; i&lt;size; i++) //checking if the employee id already exists or not
+		{
+			if (e.get_id() == list[i].get_id())  //if id already exists set error to DUPLICATE
+			{
+				error = DUPLICATE;
+				break;
+			}
+			else                       //if id doesn't exit, set error to NO_ERROR
+			{
+				error = NO_ERROR;
+			}
+		}
+		if (size == 0)             //entering the first employee record
+		{
+			list.push_back(e);
+			cout &lt;&lt; command &lt;&lt; " " &lt;&lt;  list[0].get_id() &lt;&lt; ": " &lt;&lt; list[0];
+		}
+		else
+		{
+			if (error == 0)        //inserting the employee record in the proper position(sorted)
+			{
+				i = 0;
+				while(e.get_id() &gt; list[i].get_id() &amp;&amp; i&lt;size)  //iterating over the vector list till the input id greater than existing ids
+				{
+					i++;
+				}
+
+				list.insert(list.begin() + i, e);  //inserting the employee record at the proper position
+				cout &lt;&lt; command &lt;&lt; " " &lt;&lt;  list[i].get_id() &lt;&lt; ": " &lt;&lt; list[i]; //printing the entered employee record
+			}
+			if (error == 1)   //printing error message if the id already exists
+			{
+				cout &lt;&lt; command &lt;&lt; " " &lt;&lt;  e.get_id() &lt;&lt; ": " &lt;&lt; "*** Duplicate ID ***" &lt;&lt; endl;
+			}
+		}
+	}
+
+	else if (command == '-')  //deleting a record (if exists)
+	{
+		input &gt;&gt; ws;
+		getline(input,line);  //input a line from input file
+
+		int check = stoi(line);//converting string to integer and storing the employee id to be deleted in check
+
+		for (int i = 0; i &lt; list.size(); i++)   //searching for the employee id = check
+		{
+			if (list[i].get_id() == check)    //erasing the record if it exists
+			{
+				error = NO_ERROR;
+				cout &lt;&lt; command &lt;&lt; " " &lt;&lt; check &lt;&lt; ": " &lt;&lt; list[i]; //displaying the record to be deleted
+				list.erase(list.begin()+i);
+				break;
+			}
+			else                          //setting error to NOT_FOUND if the employee id=check doesn't exist
+			{
+				error = NOT_FOUND;
+			}
+		}
+		if (error == 2)              //displaying error message if the id doesn't exist
+		{
+			cout &lt;&lt; command &lt;&lt; " " &lt;&lt; check &lt;&lt; ": " &lt;&lt; "*** ID not found ***" &lt;&lt; endl;
+		}
+	}
+
+	else if (command == '?')      //searching for the id and displaying the entire employee record
+	{
+		input &gt;&gt; ws;
+		getline(input,line);     //input a line from input file
+
+		int check = stoi(line);  //converting string to integer and storing the employee id to be searched in check
+
+		for (int i = 0; i &lt; list.size(); i++) //searching the employee id=check
+		{
+			if (list[i].get_id() == check)    //displaying the employee record if it exists
+			{
+				cout &lt;&lt; command &lt;&lt; " " &lt;&lt; check &lt;&lt; ": " &lt;&lt; list[i];
+				error = NO_ERROR;
+				break;
+			}
+			else                   //else set error to  NOT_FOUND
+			{
+				error = NOT_FOUND;
+			}
+		}
+		if (error == 2)  //displaying error message if the employee record for employee id=check doesn't exist
+		{
+			cout &lt;&lt; command &lt;&lt; " " &lt;&lt; check &lt;&lt; ": " &lt;&lt; "*** ID not found ***" &lt;&lt; endl;
+		}
+	}
+
+	else            //displaying error message INVALID_COMMAND if the command is invalid
+	{
+		input &gt;&gt; ws;
+		getline(input,line); //input a line from input file
+
+		istringstream record(line);//converting string line into input stream and store it in record
+
+		record &gt;&gt; e;    //input the record
+		cout &lt;&lt; command &lt;&lt; " " &lt;&lt; e.get_id() &lt;&lt; ": " &lt;&lt; "*** Invalid command ***" &lt;&lt; endl; //display the error message
+	}
+}
+
+void print_all(vector&lt;Employee&gt; &amp;list)   //function call to print the sorted list of employees after execution of all commands
+{
+	cout &lt;&lt; endl;
+	cout &lt;&lt; "All employees" &lt;&lt; endl;
+	cout &lt;&lt; "-------------" &lt;&lt; endl;
+	for (int i = 0; i &lt; list.size(); i++)  //printing the employee records
+	{
+		cout &lt;&lt; list[i];
+	}
+}
+
+void print_stats(vector&lt;Employee&gt; &amp;list) //function call to print the maximum, minimum and average salary
+{
+	double average_salary;             //variable to store average salary
+	double total_salary = 0;           //variable to store total salary
+
+	//sorting the employee records on salary
+	for (int i = 0; i&lt; list.size(); i++)
+	{
+		if(list[i].get_salary() &gt; list[i+1].get_salary() &amp;&amp; (i+1) &lt; list.size())
+		{
+		    Employee temp;
+		    temp = list[i];
+		    list[i] = list[i+1];
+		    list[i+1] = temp;
+		}
+	}
+
+	for (int i = 0; i&lt; list.size(); i++)         //calculating total salary (of all employees)
+	{
+		total_salary = total_salary + list[i].get_salary();
+	}
+
+	average_salary = (total_salary/list.size()); //calculating average salary
+
+	//printing the minimum, maximum and average salary
+	cout &lt;&lt; endl;
+	cout &lt;&lt; "Statistics" &lt;&lt; endl;
+	cout &lt;&lt; "----------" &lt;&lt; endl;
+	cout &lt;&lt; fixed;
+	cout &lt;&lt; showpoint;
+	cout &lt;&lt; setprecision(2);
+	cout &lt;&lt; "Minimum salary = $" &lt;&lt; right &lt;&lt; setw(9) &lt;&lt; list[0].get_salary() &lt;&lt; endl;
+	cout &lt;&lt; "Maximum salary = $" &lt;&lt; right &lt;&lt; setw(9) &lt;&lt; list[list.size()-1].get_salary() &lt;&lt; endl;
+	cout &lt;&lt; "Average salary = $" &lt;&lt; right &lt;&lt; setw(9) &lt;&lt; average_salary &lt;&lt; endl;
+}
+</pre>
+<p class="header providedFiles">Provided files</p>
+<p class="caption">commands.in:</p>
+<pre>+ 123,MacDonald,Ron,80000
++ 100,Brown,Bob,150000
+% 111,Smith,Alice,95000
+? 111
++ 222,Kurtz,Karl,175000
+- 333
++ 150,Robins,Roberta,200000
++ 123,Bristol,Buddy,50000
+? 123
+? 175
+? 100
+- 100
+? 100
++ 175,Anderson,Amy,125000
+</pre>
+<p class="header score">Score</p>
+<p class="score">1/1</p>
+<p class="download"><a href="Employee.signed.zip">Download</a></p>
+<div class="footnotes"><div class="footnote">2017-03-06T22:51:48Z</div>
+</div>
+</body></html>

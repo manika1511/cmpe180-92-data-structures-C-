@@ -1,0 +1,24 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: IuGzFr7tpfFkDAXUbh/h9tOOCuZiT
+ zehq4oKM4uIQSE=
+SHA-256-Digest-Manifest: AbRn8lPChpl4uguSGik+VWLXRSUU7fOWED1CrkGcQn0=
+Created-By: 1.8.0_121 (Oracle Corporation)
+
+Name: codecheck.log
+SHA-256-Digest: 9EQSMyi3oanCX0bIbusqN5jdWOSc8GkIhSNhY7knuK8=
+
+Name: report.html
+SHA-256-Digest: hC9LRBOuMPoJPGF2tfn19d1nRmOVzO+bzoXhqjh+0bU=
+
+Name: Employee.cpp
+SHA-256-Digest: xe7uVmi+ujasjO1bC//XecXyIfPuUmnhxseSgLW5uOE=
+
+Name: codecheck.out
+SHA-256-Digest: b52xXFI58Bk2vYsOBFW4SeAtUihwAfI35pqcs+KFu0w=
+
+Name: EmployeeApp.cpp
+SHA-256-Digest: mNmKTVsd7UekDnf6pOx+FLpa+kXlDlqtEbGzD88fMZk=
+
+Name: Employee.h
+SHA-256-Digest: 5Hh2CQ5M4EcoH6YARiyCpFA+2z2xGbsKyDqAy5Soe2w=
+

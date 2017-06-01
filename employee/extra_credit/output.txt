@@ -1,0 +1,44 @@
++ 123: Employee{ID=123, last=MacDonald, first=Ron, salary=80000}
++ 100: Employee{ID=100, last=Brown, first=Bob, salary=150000}
+% 111: *** Invalid command ***
+? 111: *** ID not found ***
++ 222: Employee{ID=222, last=Kurtz, first=Karl, salary=175000}
+- 333: *** ID not found ***
++ 150: Employee{ID=150, last=Robins, first=Roberta, salary=200000}
++ 123: *** Duplicate ID ***
+? 123: Employee{ID=123, last=MacDonald, first=Ron, salary=80000}
+? 175: *** ID not found ***
+? 100: Employee{ID=100, last=Brown, first=Bob, salary=150000}
+- 100: Employee{ID=100, last=Brown, first=Bob, salary=150000}
+? 100: *** ID not found ***
++ 175: Employee{ID=175, last=Anderson, first=Amy, salary=125000}
++ 209: Employee{ID=209, last=MacDonald, first=Rony, salary=80000}
++ 100: Employee{ID=100, last=Brot, first=Bobby, salary=150000}
+% 122: *** Invalid command ***
+? 100: Employee{ID=100, last=Brot, first=Bobby, salary=150000}
++ 224: Employee{ID=224, last=Kurtz, first=Kim, salary=175000}
+- 123: Employee{ID=123, last=MacDonald, first=Ron, salary=80000}
+? 123: *** ID not found ***
++ 155: Employee{ID=155, last=Robins, first=Rob, salary=200000}
++ 123: Employee{ID=123, last=Bristol, first=Buddy, salary=50000}
+? 123: Employee{ID=123, last=Bristol, first=Buddy, salary=50000}
+? 209: Employee{ID=209, last=MacDonald, first=Rony, salary=80000}
+? 224: Employee{ID=224, last=Kurtz, first=Kim, salary=175000}
+- 224: Employee{ID=224, last=Kurtz, first=Kim, salary=175000}
+? 224: *** ID not found ***
+
+All employees
+-------------
+Employee{ID=100, last=Brot, first=Bobby, salary=150000}
+Employee{ID=123, last=Bristol, first=Buddy, salary=50000}
+Employee{ID=150, last=Robins, first=Roberta, salary=200000}
+Employee{ID=155, last=Robins, first=Rob, salary=200000}
+Employee{ID=175, last=Anderson, first=Amy, salary=125000}
+Employee{ID=209, last=MacDonald, first=Rony, salary=80000}
+Employee{ID=222, last=Kurtz, first=Karl, salary=175000}
+
+Statistics
+----------
+Minimum salary = $ 50000.00
+Maximum salary = $200000.00
+Average salary = $140000.00
