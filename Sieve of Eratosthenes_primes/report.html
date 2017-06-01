@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Version" content="0.3"/>
+<meta name="Submission" content="/tmp/codecheck/17021420488115622660861211438"/>
+<meta name="Problem" content="17011623552sefot95xmzaj71sxktly25i9"/>
+<meta name="Level" content="1"/>
+<meta name="Time" content="2017-02-14T20:48:10Z"/>
+<meta name="ID" content="primes"/>
+<meta name="User" content="170201102462wbhq1nu6ahro91obr71o1fl"/>
+<meta name="Elapsed" content="1142 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Testing primes.cpp</p>
+<pre class="output">   2   3   5   7  11  13  17  19  23  29  31  37  41  43  47  53  59  61  67  71
+  73  79  83  89  97 101 103 107 109 113 127 131 137 139 149 151 157 163 167 173
+ 179 181 191 193 197 199 211 223 227 229 233 239 241 251 257 263 269 271 277 281
+ 283 293 307 311 313 317 331 337 347 349 353 359 367 373 379 383 389 397 401 409
+ 419 421 431 433 439 443 449 457 461 463 467 479 487 491 499 503 509 521 523 541
+ 547 557 563 569 571 577 587 593 599 601 607 613 617 619 631 641 643 647 653 659
+ 661 673 677 683 691 701 709 719 727 733 739 743 751 757 761 769 773 787 797 809
+ 811 821 823 827 829 839 853 857 859 863 877 881 883 887 907 911 919 929 937 941
+ 947 953 967 971 977 983 991 997
+
+Done!</pre>
+<span class="pass">pass </span><p class="header studentFiles">Student files</p>
+<p class="caption">primes.cpp:</p>
+<pre>/* Assignment #3.a.: Prime Numbers
+ * Author: Manika Kapoor
+ * Student ID: 011539203
+*/
+
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+const int MAX_NUMBER = 1000;  // maximum possible prime number
+const int ROW_SIZE   = 20;    // row size for printing
+
+void compute_primes(int numbers[], int size);
+//function to compute whether a number is prime or not
+//Precondition : The user must have entered the numbers to be checked in an array (maximum number not more than MAX_NUMBER).
+//Postcondition: All the composite numbers are set to zero so that only prime numbers are there in the array.
+
+void print_primes (int numbers[], int size);
+//function to print the prime numbers
+//Preconditions : All the composite numbers in the input array must be set to 0.
+//Postcondition : All the elements not equal to 0 are printed i.e. all the prime numbers are printed
+//                only constant ROW_SIZE numbers per row.
+
+ /*
+ * The main: Compute and print the prime numbers up to MAX_NUMBER.
+ */
+int main()
+{
+	int numbers[MAX_NUMBER];                 //array to store the numbers to be checked for prime
+	int start = 2;                           //first number to be filled in the array
+	for (int i=0; i &lt; MAX_NUMBER; i++)           //filling array with numbers from start to MAX_NUMBER
+	{
+		numbers[i] = start;
+		start++;
+	}
+	compute_primes(numbers, MAX_NUMBER);     //function call to determine which elements are prime in the array
+	return 0;
+}
+
+void compute_primes(int numbers[], int size) //function to compute whether a number is prime or not
+{
+	int num;                                 //variable to store the array element to be checked
+	int next;                                //variable to store the index of the element next to the element being checked
+
+	/*Checking whether an element is prime or not by iterating the loop and setting all the elements that
+	 *are divisible by the element being checked to zero. Only non-zero elements are checked. After all the
+	 *elements are checked, all the composite numbers would have been set to zero.
+	 */
+	 
+	for (int i=0; i&lt;size; i++)
+	{
+		if (numbers[i]!=0)
+		{
+			num = numbers[i];                //storing element to be checked in num
+			next = i+1;                      //storing the index of next element in variable next
+			while (next &lt; size)
+			{
+				if (numbers[next] % num == 0)
+				{
+					numbers[next] = 0;       //setting composite numbers to zero
+				}
+				next++;
+			}
+		}
+	}
+	print_primes(numbers,size);              //function call to print the prime numbers
+}
+
+void print_primes (int numbers[], int size)  //function to print the prime numbers
+{
+	int count = 0;                           //variable to store the number of elements being printed
+	for (int i = 0; i &lt; MAX_NUMBER; i++)
+	{
+		if (numbers[i]!=0 &amp;&amp; numbers[i] &lt; MAX_NUMBER) //printing only non-zero numbers less than MAX_NUMBER
+		{
+			count++;
+
+			if(count % ROW_SIZE !=0)         //printing only ROW_SIZE numbers per row
+			{
+				cout &lt;&lt; setw(4) &lt;&lt; right &lt;&lt; numbers[i];
+			}
+			else
+			{
+				cout &lt;&lt; setw(4) &lt;&lt; right &lt;&lt; numbers[i];
+				cout &lt;&lt; "\n";
+			}
+		}
+	}
+
+	cout &lt;&lt; "\n";
+	cout &lt;&lt; "\n";
+	cout &lt;&lt; "Done!";
+}
+</pre>
+<p class="header score">Score</p>
+<p class="score">1/1</p>
+<p class="download"><a href="primes.signed.zip">Download</a></p>
+<div class="footnotes"><div class="footnote">2017-02-14T20:48:10Z</div>
+</div>
+</body></html>

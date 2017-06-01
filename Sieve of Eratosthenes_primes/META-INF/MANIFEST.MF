@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Created-By: 1.8.0_121 (Oracle Corporation)
+
+Name: codecheck.log
+SHA-256-Digest: ZG7VRSILd8MiKAUUkHWqhLp7GuIj7bC78wvOqkwXf4o=
+
+Name: report.html
+SHA-256-Digest: IYR42FT6m7hohzlWWxEAQNmemAlgZl3/DkKbyZ99BFc=
+
+Name: primes.cpp
+SHA-256-Digest: Kcb5/MXQ5QiTkZLaIGvAvw4Q8lIceTcjsfdPaIyDbuo=
+
+Name: codecheck.out
+SHA-256-Digest: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+
