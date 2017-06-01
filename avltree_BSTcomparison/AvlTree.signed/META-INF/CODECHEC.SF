@@ -1,0 +1,18 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: IuGzFr7tpfFkDAXUbh/h9tOOCuZiT
+ zehq4oKM4uIQSE=
+SHA-256-Digest-Manifest: U/WWmnQjIiG4PT+525oX1RpDwfVkxqMBFrLC9uCz1E8=
+Created-By: 1.8.0_121 (Oracle Corporation)
+
+Name: codecheck.log
+SHA-256-Digest: SG5xwcgSO3UVLET3dxyr5tT9VpJcA8Pp5hXN5Pz/1To=
+
+Name: report.html
+SHA-256-Digest: r2wLA/OZzHb0ZskLfP7w6n96/L/2B731LsJPHgPZFBU=
+
+Name: AvlTree.cpp
+SHA-256-Digest: A+FHLfGnrIr4suqv5l2F1UDimgBPjmFyQ/jtQsMpzUY=
+
+Name: codecheck.out
+SHA-256-Digest: b52xXFI58Bk2vYsOBFW4SeAtUihwAfI35pqcs+KFu0w=
+

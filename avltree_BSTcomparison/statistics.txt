@@ -1,0 +1,179 @@
+N = 10000
+
+Insertion Probe counts for BST                   : 1039109
+Insertion Comparison counts for BST              : 250987
+Insertion Elapsed Time (in milliseconds) for BST : 0
+
+Insertion Probe counts for AVL                   : 747948
+Insertion Comparison counts for AVL              : 110374
+Insertion Elapsed Time (in milliseconds) for AVL : 5
+
+Search Probe counts for BST                      : 569215
+Search Comparison counts for BST                 : 280837
+Search Elapsed Time (in microseconds) for BST    : 0
+
+Search Probe counts for AVL                      : 249849
+Search Comparison counts for AVL                 : 123039
+Search Elapsed Time (in microseconds) for AVL    : 0
+
+N = 20000
+
+Insertion Probe counts for BST                   : 2450647
+Insertion Comparison counts for BST              : 633856
+Insertion Elapsed Time (in milliseconds) for BST : 0
+
+Insertion Probe counts for AVL                   : 1670488
+Insertion Comparison counts for AVL              : 253748
+Insertion Elapsed Time (in milliseconds) for AVL : 987
+
+Search Probe counts for BST                      : 1357237
+Search Comparison counts for BST                 : 673516
+Search Elapsed Time (in microseconds) for BST    : 190
+
+Search Probe counts for AVL                      : 542287
+Search Comparison counts for AVL                 : 268592
+Search Elapsed Time (in microseconds) for AVL    : 175
+
+N = 30000
+
+Insertion Probe counts for BST                   : 4073511
+Insertion Comparison counts for BST              : 1115148
+Insertion Elapsed Time (in milliseconds) for BST : 0
+
+Insertion Probe counts for AVL                   : 2618508
+Insertion Comparison counts for AVL              : 402614
+Insertion Elapsed Time (in milliseconds) for AVL : 33148
+
+Search Probe counts for BST                      : 2368431
+Search Comparison counts for BST                 : 1178576
+Search Elapsed Time (in microseconds) for BST    : 210
+
+Search Probe counts for AVL                      : 865532
+Search Comparison counts for AVL                 : 429946
+Search Elapsed Time (in microseconds) for AVL    : 141
+
+N = 40000
+
+Insertion Probe counts for BST                   : 5814515
+Insertion Comparison counts for BST              : 1645844
+Insertion Elapsed Time (in milliseconds) for BST : 0
+
+Insertion Probe counts for AVL                   : 3596812
+Insertion Comparison counts for AVL              : 556962
+Insertion Elapsed Time (in milliseconds) for AVL : 86714
+
+Search Probe counts for BST                      : 3437138
+Search Comparison counts for BST                 : 1712869
+Search Elapsed Time (in microseconds) for BST    : 62
+
+Search Probe counts for AVL                      : 1168398
+Search Comparison counts for AVL                 : 581349
+Search Elapsed Time (in microseconds) for AVL    : 43
+
+N = 50000
+
+Insertion Probe counts for BST                   : 7626505
+Insertion Comparison counts for BST              : 2227151
+Insertion Elapsed Time (in milliseconds) for BST : 0
+
+Insertion Probe counts for AVL                   : 4530662
+Insertion Comparison counts for AVL              : 704197
+Insertion Elapsed Time (in milliseconds) for AVL : 126436
+
+Search Probe counts for BST                      : 4656758
+Search Comparison counts for BST                 : 2322657
+Search Elapsed Time (in microseconds) for BST    : 186
+
+Search Probe counts for AVL                      : 1497292
+Search Comparison counts for AVL                 : 745785
+Search Elapsed Time (in microseconds) for AVL    : 68
+
+N = 60000
+
+Insertion Probe counts for BST                   : 9790029
+Insertion Comparison counts for BST              : 2956547
+Insertion Elapsed Time (in milliseconds) for BST : 0
+
+Insertion Probe counts for AVL                   : 5547620
+Insertion Comparison counts for AVL              : 865310
+Insertion Elapsed Time (in milliseconds) for AVL : 211445
+
+Search Probe counts for BST                      : 6169498
+Search Comparison counts for BST                 : 3078908
+Search Elapsed Time (in microseconds) for BST    : 71
+
+Search Probe counts for AVL                      : 1841207
+Search Comparison counts for AVL                 : 917683
+Search Elapsed Time (in microseconds) for AVL    : 29
+
+N = 70000
+
+Insertion Probe counts for BST                   : 12303199
+Insertion Comparison counts for BST              : 3856618
+Insertion Elapsed Time (in milliseconds) for BST : 0
+
+Insertion Probe counts for AVL                   : 6576188
+Insertion Comparison counts for AVL              : 1028082
+Insertion Elapsed Time (in milliseconds) for AVL : 367387
+
+Search Probe counts for BST                      : 7982969
+Search Comparison counts for BST                 : 3985765
+Search Elapsed Time (in microseconds) for BST    : 879
+
+Search Probe counts for AVL                      : 2178316
+Search Comparison counts for AVL                 : 1086298
+Search Elapsed Time (in microseconds) for AVL    : 139
+
+N = 80000
+
+Insertion Probe counts for BST                   : 14926825
+Insertion Comparison counts for BST              : 4829557
+Insertion Elapsed Time (in milliseconds) for BST : 0
+
+Insertion Probe counts for AVL                   : 7554264
+Insertion Comparison counts for AVL              : 1183240
+Insertion Elapsed Time (in milliseconds) for AVL : 522780
+
+Search Probe counts for BST                      : 10046032
+Search Comparison counts for BST                 : 5016981
+Search Elapsed Time (in microseconds) for BST    : 6122
+
+Search Probe counts for AVL                      : 2518687
+Search Comparison counts for AVL                 : 1256326
+Search Elapsed Time (in microseconds) for AVL    : 570
+
+N = 90000
+
+Insertion Probe counts for BST                   : 17879523
+Insertion Comparison counts for BST              : 5950664
+Insertion Elapsed Time (in milliseconds) for BST : 0
+
+Insertion Probe counts for AVL                   : 8578648
+Insertion Comparison counts for AVL              : 1345192
+Insertion Elapsed Time (in milliseconds) for AVL : 773905
+
+Search Probe counts for BST                      : 12229686
+Search Comparison counts for BST                 : 6108891
+Search Elapsed Time (in microseconds) for BST    : 3132
+
+Search Probe counts for AVL                      : 2852996
+Search Comparison counts for AVL                 : 1423522
+Search Elapsed Time (in microseconds) for AVL    : 170
+
+N = 100000
+
+Insertion Probe counts for BST                   : 21018011
+Insertion Comparison counts for BST              : 7150440
+Insertion Elapsed Time (in milliseconds) for BST : 14
+
+Insertion Probe counts for AVL                   : 9648252
+Insertion Comparison counts for AVL              : 1515514
+Insertion Elapsed Time (in milliseconds) for AVL : 997923
+
+Search Probe counts for BST                      : 14696810
+Search Comparison counts for BST                 : 7342525
+Search Elapsed Time (in microseconds) for BST    : 11732
+
+Search Probe counts for AVL                      : 3215576
+Search Comparison counts for AVL                 : 1604848
+Search Elapsed Time (in microseconds) for AVL    : 961
