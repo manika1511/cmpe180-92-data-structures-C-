@@ -1,0 +1,18 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: IuGzFr7tpfFkDAXUbh/h9tOOCuZiT
+ zehq4oKM4uIQSE=
+SHA-256-Digest-Manifest: ecL9vUKwHHBwgQH45rxUJDpP9fCAz5RSuMdWOPgl124=
+Created-By: 1.8.0_121 (Oracle Corporation)
+
+Name: codecheck.log
+SHA-256-Digest: iNIe5yonur/5VPIePChKl7kqq19NXRuqxqNIAj7lzq8=
+
+Name: report.html
+SHA-256-Digest: cE08TsSelnH3rdVN0Cw3FYQZq9UI6Sz/cU2kGmtX3lw=
+
+Name: codecheck.out
+SHA-256-Digest: b52xXFI58Bk2vYsOBFW4SeAtUihwAfI35pqcs+KFu0w=
+
+Name: rps.cpp
+SHA-256-Digest: P+HIvbeqHIYpxqwVi7wQatOGBKUwZDnAhCbxA83y8Og=
+
