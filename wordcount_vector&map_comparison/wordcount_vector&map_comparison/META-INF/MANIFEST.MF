@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Created-By: 1.8.0_121 (Oracle Corporation)
+
+Name: WordMap.cpp
+SHA-256-Digest: W8/G7qvS0TPKVpuBWwGU2cOBzzXdWvbIZOhC8EpTyc8=
+
+Name: Word.h
+SHA-256-Digest: spqoiubiRjwl/4D5l4JDwuxNRviGjm1C5iehjQx2luA=
+
+Name: codecheck.log
+SHA-256-Digest: K2rL2WJBWsLdO93DBI/2em0/Ao29mCii7FUO182lgcA=
+
+Name: report.html
+SHA-256-Digest: v7vnsG0+n7qvWPnIZEBS3lY1TC3ciFLJ5JNMz7BcZiE=
+
+Name: Word.cpp
+SHA-256-Digest: 0CbZEMK+zCBXnHGRbPIJg238Xaq64sNXOkGZb0l3y7k=
+
+Name: WordMap.h
+SHA-256-Digest: 5+a8NAirfhejZ+DagpbNo/MiXjU1WuVMhGfsPnJp3RQ=
+
+Name: Constitution.cpp
+SHA-256-Digest: oKxbF/nvBe+3HuK1hx56Prgy67lZq1H/aLbRxLFmajE=
+
+Name: WordVector.cpp
+SHA-256-Digest: AlqxNPKDgocrBz2Lz7P2C8JgK2KNeKQpgqUtbg/3/xo=
+
+Name: codecheck.out
+SHA-256-Digest: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+
+Name: WordVector.h
+SHA-256-Digest: 5TVG83/z+4wtfZjW6kjCLE0o/GD17QRrqk9kHrIA/Lo=
+
